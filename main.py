@@ -1,33 +1,40 @@
 from pprint import pprint
+from typing import List
 
 import swagger_client
-from swagger_client import ClanMemberList
+from swagger_client import ClanMemberList, ClansApi, ClanMember, ClanWarLogEntry
 from swagger_client.rest import ApiException
 
 CLAN_TAG = '#28G2Y9L8Y'
 
 
-def main(api_client: swagger_client.ApiClient):
-    clans_api = swagger_client.ClansApi(api_client)
-
+def get_members(clans_api: ClansApi) -> List[ClanMember]:
     data = clans_api.get_clan_members(CLAN_TAG)
 
-    people = []
+    members: List[ClanMember] = []
 
-    for key in data:
-        person = {}
-        for item in data[key]:
-            people['name'] = item['name']
-            people['donations'] = item['donations']
-            people['donationsReceived'] = item['donationsReceived']
-            people['role'] = item['role']
-            people['tag'] = item['tag']
-            people['townHallLevel'] = item['townHallLevel']
-            people['trophies'] = item['trophies']
-        people.append(person)
+    for item in data['items']:
+        members.append(item)
 
-    pprint(people)
+    return members
 
+
+def get_war_log(clans_api: ClansApi) -> List[ClanWarLogEntry]:
+    data = clans_api.get_clan_war_log(CLAN_TAG)
+
+    war_log: List[ClanWarLogEntry] = []
+
+    for item in data['items']:
+        war_log.append(item)
+
+    return war_log
+
+
+def main(api_client: swagger_client.ApiClient):
+    members = get_members(swagger_client.ClansApi(api_client))
+    war_log = get_war_log(swagger_client.ClansApi(api_client))
+
+    pprint(war_log[0].clan.members)
 
 
 if __name__ == '__main__':
