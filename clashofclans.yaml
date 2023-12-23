@@ -369,6 +369,7 @@ definitions:
         - war
         - inWar
         - ended
+        - warEnded
         type: string
       teamSize:
         type: integer

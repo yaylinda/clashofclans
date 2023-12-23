@@ -1,6 +1,7 @@
 from pprint import pprint
 
 import swagger_client
+from swagger_client import ClanMemberList
 from swagger_client.rest import ApiException
 
 CLAN_TAG = '#28G2Y9L8Y'
@@ -9,12 +10,24 @@ CLAN_TAG = '#28G2Y9L8Y'
 def main(api_client: swagger_client.ApiClient):
     clans_api = swagger_client.ClansApi(api_client)
 
-    try:
-        # Get clan information
-        api_response = clans_api.get_clan_war_log(CLAN_TAG)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ClansApi->get_clan: %s\n" % e)
+    data = clans_api.get_clan_members(CLAN_TAG)
+
+    people = []
+
+    for key in data:
+        person = {}
+        for item in data[key]:
+            people['name'] = item['name']
+            people['donations'] = item['donations']
+            people['donationsReceived'] = item['donationsReceived']
+            people['role'] = item['role']
+            people['tag'] = item['tag']
+            people['townHallLevel'] = item['townHallLevel']
+            people['trophies'] = item['trophies']
+        people.append(person)
+
+    pprint(people)
+
 
 
 if __name__ == '__main__':

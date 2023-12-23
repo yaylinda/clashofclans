@@ -221,7 +221,7 @@ class ClanWar(object):
         :param state: The state of this ClanWar.  # noqa: E501
         :type: str
         """
-        allowed_values = ["clanNotFound", "accessDenied", "notInWar", "inMatchmaking", "enterWar", "matched", "preparation", "war", "inWar", "ended"]  # noqa: E501
+        allowed_values = ["clanNotFound", "accessDenied", "notInWar", "inMatchmaking", "enterWar", "matched", "preparation", "war", "inWar", "ended", "warEnded"]  # noqa: E501
         if state not in allowed_values:
             raise ValueError(
                 "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
