@@ -11,7 +11,7 @@ def main(api_client: swagger_client.ApiClient):
 
     try:
         # Get clan information
-        api_response = clans_api.get_clan(CLAN_TAG)
+        api_response = clans_api.get_clan_war_log(CLAN_TAG)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ClansApi->get_clan: %s\n" % e)

@@ -11,3 +11,4 @@ requirements.txt
 setup.py
 test-requirements.txt
 tox.ini
+test/**
