@@ -422,7 +422,7 @@ class Clan(object):
         :type: str
         """
         allowed_values = ["UNKNOWN", "ALWAYS", "MORE_THAN_ONCE_PER_WEEK", "ONCE_PER_WEEK", "LESS_THAN_ONCE_PER_WEEK", "NEVER", "ANY"]  # noqa: E501
-        if war_frequency not in allowed_values:
+        if war_frequency.upper() not in allowed_values:
             raise ValueError(
                 "Invalid value for `war_frequency` ({0}), must be one of {1}"  # noqa: E501
                 .format(war_frequency, allowed_values)
