@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,86 +28,44 @@ class ClanWarLogEntry(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'clan': 'WarClan',
-        'team_size': 'int',
         'attacks_per_member': 'int',
-        'opponent': 'WarClan',
+        'clan': 'WarClan',
         'end_time': 'str',
-        'result': 'str'
+        'opponent': 'WarClan',
+        'result': 'str',
+        'team_size': 'int'
     }
 
     attribute_map = {
-        'clan': 'clan',
-        'team_size': 'teamSize',
         'attacks_per_member': 'attacksPerMember',
-        'opponent': 'opponent',
+        'clan': 'clan',
         'end_time': 'endTime',
-        'result': 'result'
+        'opponent': 'opponent',
+        'result': 'result',
+        'team_size': 'teamSize'
     }
 
-    def __init__(self, clan=None, team_size=None, attacks_per_member=None, opponent=None, end_time=None, result=None):  # noqa: E501
+    def __init__(self, attacks_per_member=None, clan=None, end_time=None, opponent=None, result=None, team_size=None):  # noqa: E501
         """ClanWarLogEntry - a model defined in Swagger"""  # noqa: E501
-        self._clan = None
-        self._team_size = None
         self._attacks_per_member = None
-        self._opponent = None
+        self._clan = None
         self._end_time = None
+        self._opponent = None
         self._result = None
+        self._team_size = None
         self.discriminator = None
-        if clan is not None:
-            self.clan = clan
-        if team_size is not None:
-            self.team_size = team_size
         if attacks_per_member is not None:
             self.attacks_per_member = attacks_per_member
-        if opponent is not None:
-            self.opponent = opponent
+        if clan is not None:
+            self.clan = clan
         if end_time is not None:
             self.end_time = end_time
+        if opponent is not None:
+            self.opponent = opponent
         if result is not None:
             self.result = result
-
-    @property
-    def clan(self):
-        """Gets the clan of this ClanWarLogEntry.  # noqa: E501
-
-
-        :return: The clan of this ClanWarLogEntry.  # noqa: E501
-        :rtype: WarClan
-        """
-        return self._clan
-
-    @clan.setter
-    def clan(self, clan):
-        """Sets the clan of this ClanWarLogEntry.
-
-
-        :param clan: The clan of this ClanWarLogEntry.  # noqa: E501
-        :type: WarClan
-        """
-
-        self._clan = clan
-
-    @property
-    def team_size(self):
-        """Gets the team_size of this ClanWarLogEntry.  # noqa: E501
-
-
-        :return: The team_size of this ClanWarLogEntry.  # noqa: E501
-        :rtype: int
-        """
-        return self._team_size
-
-    @team_size.setter
-    def team_size(self, team_size):
-        """Sets the team_size of this ClanWarLogEntry.
-
-
-        :param team_size: The team_size of this ClanWarLogEntry.  # noqa: E501
-        :type: int
-        """
-
-        self._team_size = team_size
+        if team_size is not None:
+            self.team_size = team_size
 
     @property
     def attacks_per_member(self):
@@ -131,25 +89,25 @@ class ClanWarLogEntry(object):
         self._attacks_per_member = attacks_per_member
 
     @property
-    def opponent(self):
-        """Gets the opponent of this ClanWarLogEntry.  # noqa: E501
+    def clan(self):
+        """Gets the clan of this ClanWarLogEntry.  # noqa: E501
 
 
-        :return: The opponent of this ClanWarLogEntry.  # noqa: E501
+        :return: The clan of this ClanWarLogEntry.  # noqa: E501
         :rtype: WarClan
         """
-        return self._opponent
+        return self._clan
 
-    @opponent.setter
-    def opponent(self, opponent):
-        """Sets the opponent of this ClanWarLogEntry.
+    @clan.setter
+    def clan(self, clan):
+        """Sets the clan of this ClanWarLogEntry.
 
 
-        :param opponent: The opponent of this ClanWarLogEntry.  # noqa: E501
+        :param clan: The clan of this ClanWarLogEntry.  # noqa: E501
         :type: WarClan
         """
 
-        self._opponent = opponent
+        self._clan = clan
 
     @property
     def end_time(self):
@@ -173,6 +131,27 @@ class ClanWarLogEntry(object):
         self._end_time = end_time
 
     @property
+    def opponent(self):
+        """Gets the opponent of this ClanWarLogEntry.  # noqa: E501
+
+
+        :return: The opponent of this ClanWarLogEntry.  # noqa: E501
+        :rtype: WarClan
+        """
+        return self._opponent
+
+    @opponent.setter
+    def opponent(self, opponent):
+        """Sets the opponent of this ClanWarLogEntry.
+
+
+        :param opponent: The opponent of this ClanWarLogEntry.  # noqa: E501
+        :type: WarClan
+        """
+
+        self._opponent = opponent
+
+    @property
     def result(self):
         """Gets the result of this ClanWarLogEntry.  # noqa: E501
 
@@ -190,7 +169,7 @@ class ClanWarLogEntry(object):
         :param result: The result of this ClanWarLogEntry.  # noqa: E501
         :type: str
         """
-        allowed_values = ["LOSE", "WIN", "TIE"]  # noqa: E501
+        allowed_values = ["lose", "win", "tie"]  # noqa: E501
         if result not in allowed_values:
             raise ValueError(
                 "Invalid value for `result` ({0}), must be one of {1}"  # noqa: E501
@@ -198,6 +177,27 @@ class ClanWarLogEntry(object):
             )
 
         self._result = result
+
+    @property
+    def team_size(self):
+        """Gets the team_size of this ClanWarLogEntry.  # noqa: E501
+
+
+        :return: The team_size of this ClanWarLogEntry.  # noqa: E501
+        :rtype: int
+        """
+        return self._team_size
+
+    @team_size.setter
+    def team_size(self, team_size):
+        """Sets the team_size of this ClanWarLogEntry.
+
+
+        :param team_size: The team_size of this ClanWarLogEntry.  # noqa: E501
+        :type: int
+        """
+
+        self._team_size = team_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,122 +28,80 @@ class WarClan(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'destruction_percentage': 'ModelFloat',
-        'tag': 'str',
-        'name': 'str',
+        'attacks': 'int',
         'badge_urls': 'object',
         'clan_level': 'int',
-        'attacks': 'int',
-        'stars': 'int',
+        'destruction_percentage': 'ModelFloat',
         'exp_earned': 'int',
-        'members': 'ClanWarMemberList'
+        'members': 'ClanWarMemberList',
+        'name': 'str',
+        'stars': 'int',
+        'tag': 'str'
     }
 
     attribute_map = {
-        'destruction_percentage': 'destructionPercentage',
-        'tag': 'tag',
-        'name': 'name',
+        'attacks': 'attacks',
         'badge_urls': 'badgeUrls',
         'clan_level': 'clanLevel',
-        'attacks': 'attacks',
-        'stars': 'stars',
+        'destruction_percentage': 'destructionPercentage',
         'exp_earned': 'expEarned',
-        'members': 'members'
+        'members': 'members',
+        'name': 'name',
+        'stars': 'stars',
+        'tag': 'tag'
     }
 
-    def __init__(self, destruction_percentage=None, tag=None, name=None, badge_urls=None, clan_level=None, attacks=None, stars=None, exp_earned=None, members=None):  # noqa: E501
+    def __init__(self, attacks=None, badge_urls=None, clan_level=None, destruction_percentage=None, exp_earned=None, members=None, name=None, stars=None, tag=None):  # noqa: E501
         """WarClan - a model defined in Swagger"""  # noqa: E501
-        self._destruction_percentage = None
-        self._tag = None
-        self._name = None
+        self._attacks = None
         self._badge_urls = None
         self._clan_level = None
-        self._attacks = None
-        self._stars = None
+        self._destruction_percentage = None
         self._exp_earned = None
         self._members = None
+        self._name = None
+        self._stars = None
+        self._tag = None
         self.discriminator = None
-        if destruction_percentage is not None:
-            self.destruction_percentage = destruction_percentage
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
+        if attacks is not None:
+            self.attacks = attacks
         if badge_urls is not None:
             self.badge_urls = badge_urls
         if clan_level is not None:
             self.clan_level = clan_level
-        if attacks is not None:
-            self.attacks = attacks
-        if stars is not None:
-            self.stars = stars
+        if destruction_percentage is not None:
+            self.destruction_percentage = destruction_percentage
         if exp_earned is not None:
             self.exp_earned = exp_earned
         if members is not None:
             self.members = members
+        if name is not None:
+            self.name = name
+        if stars is not None:
+            self.stars = stars
+        if tag is not None:
+            self.tag = tag
 
     @property
-    def destruction_percentage(self):
-        """Gets the destruction_percentage of this WarClan.  # noqa: E501
+    def attacks(self):
+        """Gets the attacks of this WarClan.  # noqa: E501
 
 
-        :return: The destruction_percentage of this WarClan.  # noqa: E501
-        :rtype: ModelFloat
+        :return: The attacks of this WarClan.  # noqa: E501
+        :rtype: int
         """
-        return self._destruction_percentage
+        return self._attacks
 
-    @destruction_percentage.setter
-    def destruction_percentage(self, destruction_percentage):
-        """Sets the destruction_percentage of this WarClan.
-
-
-        :param destruction_percentage: The destruction_percentage of this WarClan.  # noqa: E501
-        :type: ModelFloat
-        """
-
-        self._destruction_percentage = destruction_percentage
-
-    @property
-    def tag(self):
-        """Gets the tag of this WarClan.  # noqa: E501
+    @attacks.setter
+    def attacks(self, attacks):
+        """Sets the attacks of this WarClan.
 
 
-        :return: The tag of this WarClan.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this WarClan.
-
-
-        :param tag: The tag of this WarClan.  # noqa: E501
-        :type: str
+        :param attacks: The attacks of this WarClan.  # noqa: E501
+        :type: int
         """
 
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this WarClan.  # noqa: E501
-
-
-        :return: The name of this WarClan.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this WarClan.
-
-
-        :param name: The name of this WarClan.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
+        self._attacks = attacks
 
     @property
     def badge_urls(self):
@@ -188,46 +146,25 @@ class WarClan(object):
         self._clan_level = clan_level
 
     @property
-    def attacks(self):
-        """Gets the attacks of this WarClan.  # noqa: E501
+    def destruction_percentage(self):
+        """Gets the destruction_percentage of this WarClan.  # noqa: E501
 
 
-        :return: The attacks of this WarClan.  # noqa: E501
-        :rtype: int
+        :return: The destruction_percentage of this WarClan.  # noqa: E501
+        :rtype: ModelFloat
         """
-        return self._attacks
+        return self._destruction_percentage
 
-    @attacks.setter
-    def attacks(self, attacks):
-        """Sets the attacks of this WarClan.
-
-
-        :param attacks: The attacks of this WarClan.  # noqa: E501
-        :type: int
-        """
-
-        self._attacks = attacks
-
-    @property
-    def stars(self):
-        """Gets the stars of this WarClan.  # noqa: E501
+    @destruction_percentage.setter
+    def destruction_percentage(self, destruction_percentage):
+        """Sets the destruction_percentage of this WarClan.
 
 
-        :return: The stars of this WarClan.  # noqa: E501
-        :rtype: int
-        """
-        return self._stars
-
-    @stars.setter
-    def stars(self, stars):
-        """Sets the stars of this WarClan.
-
-
-        :param stars: The stars of this WarClan.  # noqa: E501
-        :type: int
+        :param destruction_percentage: The destruction_percentage of this WarClan.  # noqa: E501
+        :type: ModelFloat
         """
 
-        self._stars = stars
+        self._destruction_percentage = destruction_percentage
 
     @property
     def exp_earned(self):
@@ -270,6 +207,69 @@ class WarClan(object):
         """
 
         self._members = members
+
+    @property
+    def name(self):
+        """Gets the name of this WarClan.  # noqa: E501
+
+
+        :return: The name of this WarClan.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this WarClan.
+
+
+        :param name: The name of this WarClan.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def stars(self):
+        """Gets the stars of this WarClan.  # noqa: E501
+
+
+        :return: The stars of this WarClan.  # noqa: E501
+        :rtype: int
+        """
+        return self._stars
+
+    @stars.setter
+    def stars(self, stars):
+        """Sets the stars of this WarClan.
+
+
+        :param stars: The stars of this WarClan.  # noqa: E501
+        :type: int
+        """
+
+        self._stars = stars
+
+    @property
+    def tag(self):
+        """Gets the tag of this WarClan.  # noqa: E501
+
+
+        :return: The tag of this WarClan.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this WarClan.
+
+
+        :param tag: The tag of this WarClan.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

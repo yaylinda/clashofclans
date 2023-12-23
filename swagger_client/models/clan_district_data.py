@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,50 +28,50 @@ class ClanDistrictData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'JsonLocalizedName',
+        'district_hall_level': 'int',
         'id': 'int',
-        'district_hall_level': 'int'
+        'name': 'JsonLocalizedName'
     }
 
     attribute_map = {
-        'name': 'name',
+        'district_hall_level': 'districtHallLevel',
         'id': 'id',
-        'district_hall_level': 'districtHallLevel'
+        'name': 'name'
     }
 
-    def __init__(self, name=None, id=None, district_hall_level=None):  # noqa: E501
+    def __init__(self, district_hall_level=None, id=None, name=None):  # noqa: E501
         """ClanDistrictData - a model defined in Swagger"""  # noqa: E501
-        self._name = None
-        self._id = None
         self._district_hall_level = None
+        self._id = None
+        self._name = None
         self.discriminator = None
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
         if district_hall_level is not None:
             self.district_hall_level = district_hall_level
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
 
     @property
-    def name(self):
-        """Gets the name of this ClanDistrictData.  # noqa: E501
+    def district_hall_level(self):
+        """Gets the district_hall_level of this ClanDistrictData.  # noqa: E501
 
 
-        :return: The name of this ClanDistrictData.  # noqa: E501
-        :rtype: JsonLocalizedName
+        :return: The district_hall_level of this ClanDistrictData.  # noqa: E501
+        :rtype: int
         """
-        return self._name
+        return self._district_hall_level
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanDistrictData.
+    @district_hall_level.setter
+    def district_hall_level(self, district_hall_level):
+        """Sets the district_hall_level of this ClanDistrictData.
 
 
-        :param name: The name of this ClanDistrictData.  # noqa: E501
-        :type: JsonLocalizedName
+        :param district_hall_level: The district_hall_level of this ClanDistrictData.  # noqa: E501
+        :type: int
         """
 
-        self._name = name
+        self._district_hall_level = district_hall_level
 
     @property
     def id(self):
@@ -95,25 +95,25 @@ class ClanDistrictData(object):
         self._id = id
 
     @property
-    def district_hall_level(self):
-        """Gets the district_hall_level of this ClanDistrictData.  # noqa: E501
+    def name(self):
+        """Gets the name of this ClanDistrictData.  # noqa: E501
 
 
-        :return: The district_hall_level of this ClanDistrictData.  # noqa: E501
-        :rtype: int
+        :return: The name of this ClanDistrictData.  # noqa: E501
+        :rtype: JsonLocalizedName
         """
-        return self._district_hall_level
+        return self._name
 
-    @district_hall_level.setter
-    def district_hall_level(self, district_hall_level):
-        """Sets the district_hall_level of this ClanDistrictData.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanDistrictData.
 
 
-        :param district_hall_level: The district_hall_level of this ClanDistrictData.  # noqa: E501
-        :type: int
+        :param name: The name of this ClanDistrictData.  # noqa: E501
+        :type: JsonLocalizedName
         """
 
-        self._district_hall_level = district_hall_level
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

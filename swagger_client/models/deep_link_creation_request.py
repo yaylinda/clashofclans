@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,50 +28,29 @@ class DeepLinkCreationRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'player_tags': 'StringList',
         'clan_tag': 'str',
-        'opponent_clan_tag': 'str'
+        'opponent_clan_tag': 'str',
+        'player_tags': 'StringList'
     }
 
     attribute_map = {
-        'player_tags': 'playerTags',
         'clan_tag': 'clanTag',
-        'opponent_clan_tag': 'opponentClanTag'
+        'opponent_clan_tag': 'opponentClanTag',
+        'player_tags': 'playerTags'
     }
 
-    def __init__(self, player_tags=None, clan_tag=None, opponent_clan_tag=None):  # noqa: E501
+    def __init__(self, clan_tag=None, opponent_clan_tag=None, player_tags=None):  # noqa: E501
         """DeepLinkCreationRequest - a model defined in Swagger"""  # noqa: E501
-        self._player_tags = None
         self._clan_tag = None
         self._opponent_clan_tag = None
+        self._player_tags = None
         self.discriminator = None
-        if player_tags is not None:
-            self.player_tags = player_tags
         if clan_tag is not None:
             self.clan_tag = clan_tag
         if opponent_clan_tag is not None:
             self.opponent_clan_tag = opponent_clan_tag
-
-    @property
-    def player_tags(self):
-        """Gets the player_tags of this DeepLinkCreationRequest.  # noqa: E501
-
-
-        :return: The player_tags of this DeepLinkCreationRequest.  # noqa: E501
-        :rtype: StringList
-        """
-        return self._player_tags
-
-    @player_tags.setter
-    def player_tags(self, player_tags):
-        """Sets the player_tags of this DeepLinkCreationRequest.
-
-
-        :param player_tags: The player_tags of this DeepLinkCreationRequest.  # noqa: E501
-        :type: StringList
-        """
-
-        self._player_tags = player_tags
+        if player_tags is not None:
+            self.player_tags = player_tags
 
     @property
     def clan_tag(self):
@@ -114,6 +93,27 @@ class DeepLinkCreationRequest(object):
         """
 
         self._opponent_clan_tag = opponent_clan_tag
+
+    @property
+    def player_tags(self):
+        """Gets the player_tags of this DeepLinkCreationRequest.  # noqa: E501
+
+
+        :return: The player_tags of this DeepLinkCreationRequest.  # noqa: E501
+        :rtype: StringList
+        """
+        return self._player_tags
+
+    @player_tags.setter
+    def player_tags(self, player_tags):
+        """Sets the player_tags of this DeepLinkCreationRequest.
+
+
+        :param player_tags: The player_tags of this DeepLinkCreationRequest.  # noqa: E501
+        :type: StringList
+        """
+
+        self._player_tags = player_tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

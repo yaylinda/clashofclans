@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,55 +28,55 @@ class ClientError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'reason': 'str',
+        'detail': 'object',
         'message': 'str',
-        'type': 'str',
-        'detail': 'object'
+        'reason': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'reason': 'reason',
+        'detail': 'detail',
         'message': 'message',
-        'type': 'type',
-        'detail': 'detail'
+        'reason': 'reason',
+        'type': 'type'
     }
 
-    def __init__(self, reason=None, message=None, type=None, detail=None):  # noqa: E501
+    def __init__(self, detail=None, message=None, reason=None, type=None):  # noqa: E501
         """ClientError - a model defined in Swagger"""  # noqa: E501
-        self._reason = None
-        self._message = None
-        self._type = None
         self._detail = None
+        self._message = None
+        self._reason = None
+        self._type = None
         self.discriminator = None
-        if reason is not None:
-            self.reason = reason
-        if message is not None:
-            self.message = message
-        if type is not None:
-            self.type = type
         if detail is not None:
             self.detail = detail
+        if message is not None:
+            self.message = message
+        if reason is not None:
+            self.reason = reason
+        if type is not None:
+            self.type = type
 
     @property
-    def reason(self):
-        """Gets the reason of this ClientError.  # noqa: E501
+    def detail(self):
+        """Gets the detail of this ClientError.  # noqa: E501
 
 
-        :return: The reason of this ClientError.  # noqa: E501
-        :rtype: str
+        :return: The detail of this ClientError.  # noqa: E501
+        :rtype: object
         """
-        return self._reason
+        return self._detail
 
-    @reason.setter
-    def reason(self, reason):
-        """Sets the reason of this ClientError.
+    @detail.setter
+    def detail(self, detail):
+        """Sets the detail of this ClientError.
 
 
-        :param reason: The reason of this ClientError.  # noqa: E501
-        :type: str
+        :param detail: The detail of this ClientError.  # noqa: E501
+        :type: object
         """
 
-        self._reason = reason
+        self._detail = detail
 
     @property
     def message(self):
@@ -100,6 +100,27 @@ class ClientError(object):
         self._message = message
 
     @property
+    def reason(self):
+        """Gets the reason of this ClientError.  # noqa: E501
+
+
+        :return: The reason of this ClientError.  # noqa: E501
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason):
+        """Sets the reason of this ClientError.
+
+
+        :param reason: The reason of this ClientError.  # noqa: E501
+        :type: str
+        """
+
+        self._reason = reason
+
+    @property
     def type(self):
         """Gets the type of this ClientError.  # noqa: E501
 
@@ -119,27 +140,6 @@ class ClientError(object):
         """
 
         self._type = type
-
-    @property
-    def detail(self):
-        """Gets the detail of this ClientError.  # noqa: E501
-
-
-        :return: The detail of this ClientError.  # noqa: E501
-        :rtype: object
-        """
-        return self._detail
-
-    @detail.setter
-    def detail(self, detail):
-        """Sets the detail of this ClientError.
-
-
-        :param detail: The detail of this ClientError.  # noqa: E501
-        :type: object
-        """
-
-        self._detail = detail
 
     def to_dict(self):
         """Returns the model properties as a dict"""

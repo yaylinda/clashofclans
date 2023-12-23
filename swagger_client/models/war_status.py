@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,60 +28,39 @@ class WarStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'status_code': 'int',
         'clan_tag': 'str',
         'enemy_clan_tag': 'str',
-        'war_state': 'str',
-        'timestamp': 'str'
+        'status_code': 'int',
+        'timestamp': 'str',
+        'war_state': 'str'
     }
 
     attribute_map = {
-        'status_code': 'statusCode',
         'clan_tag': 'clanTag',
         'enemy_clan_tag': 'enemyClanTag',
-        'war_state': 'warState',
-        'timestamp': 'timestamp'
+        'status_code': 'statusCode',
+        'timestamp': 'timestamp',
+        'war_state': 'warState'
     }
 
-    def __init__(self, status_code=None, clan_tag=None, enemy_clan_tag=None, war_state=None, timestamp=None):  # noqa: E501
+    def __init__(self, clan_tag=None, enemy_clan_tag=None, status_code=None, timestamp=None, war_state=None):  # noqa: E501
         """WarStatus - a model defined in Swagger"""  # noqa: E501
-        self._status_code = None
         self._clan_tag = None
         self._enemy_clan_tag = None
-        self._war_state = None
+        self._status_code = None
         self._timestamp = None
+        self._war_state = None
         self.discriminator = None
-        if status_code is not None:
-            self.status_code = status_code
         if clan_tag is not None:
             self.clan_tag = clan_tag
         if enemy_clan_tag is not None:
             self.enemy_clan_tag = enemy_clan_tag
-        if war_state is not None:
-            self.war_state = war_state
+        if status_code is not None:
+            self.status_code = status_code
         if timestamp is not None:
             self.timestamp = timestamp
-
-    @property
-    def status_code(self):
-        """Gets the status_code of this WarStatus.  # noqa: E501
-
-
-        :return: The status_code of this WarStatus.  # noqa: E501
-        :rtype: int
-        """
-        return self._status_code
-
-    @status_code.setter
-    def status_code(self, status_code):
-        """Sets the status_code of this WarStatus.
-
-
-        :param status_code: The status_code of this WarStatus.  # noqa: E501
-        :type: int
-        """
-
-        self._status_code = status_code
+        if war_state is not None:
+            self.war_state = war_state
 
     @property
     def clan_tag(self):
@@ -126,31 +105,25 @@ class WarStatus(object):
         self._enemy_clan_tag = enemy_clan_tag
 
     @property
-    def war_state(self):
-        """Gets the war_state of this WarStatus.  # noqa: E501
+    def status_code(self):
+        """Gets the status_code of this WarStatus.  # noqa: E501
 
 
-        :return: The war_state of this WarStatus.  # noqa: E501
-        :rtype: str
+        :return: The status_code of this WarStatus.  # noqa: E501
+        :rtype: int
         """
-        return self._war_state
+        return self._status_code
 
-    @war_state.setter
-    def war_state(self, war_state):
-        """Sets the war_state of this WarStatus.
+    @status_code.setter
+    def status_code(self, status_code):
+        """Sets the status_code of this WarStatus.
 
 
-        :param war_state: The war_state of this WarStatus.  # noqa: E501
-        :type: str
+        :param status_code: The status_code of this WarStatus.  # noqa: E501
+        :type: int
         """
-        allowed_values = ["CLAN_NOT_FOUND", "ACCESS_DENIED", "NOT_IN_WAR", "IN_MATCHMAKING", "ENTER_WAR", "MATCHED", "PREPARATION", "WAR", "IN_WAR", "ENDED"]  # noqa: E501
-        if war_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `war_state` ({0}), must be one of {1}"  # noqa: E501
-                .format(war_state, allowed_values)
-            )
 
-        self._war_state = war_state
+        self._status_code = status_code
 
     @property
     def timestamp(self):
@@ -172,6 +145,33 @@ class WarStatus(object):
         """
 
         self._timestamp = timestamp
+
+    @property
+    def war_state(self):
+        """Gets the war_state of this WarStatus.  # noqa: E501
+
+
+        :return: The war_state of this WarStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._war_state
+
+    @war_state.setter
+    def war_state(self, war_state):
+        """Sets the war_state of this WarStatus.
+
+
+        :param war_state: The war_state of this WarStatus.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["clanNotFound", "accessDenied", "notInWar", "inMatchmaking", "enterWar", "matched", "preparation", "war", "inWar", "ended"]  # noqa: E501
+        if war_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `war_state` ({0}), must be one of {1}"  # noqa: E501
+                .format(war_state, allowed_values)
+            )
+
+        self._war_state = war_state
 
     def to_dict(self):
         """Returns the model properties as a dict"""

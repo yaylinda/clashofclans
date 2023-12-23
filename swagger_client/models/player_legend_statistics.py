@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,65 +28,44 @@ class PlayerLegendStatistics(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'previous_builder_base_season': 'LegendLeagueTournamentSeasonResult',
         'best_builder_base_season': 'LegendLeagueTournamentSeasonResult',
-        'legend_trophies': 'int',
-        'current_season': 'LegendLeagueTournamentSeasonResult',
         'best_season': 'LegendLeagueTournamentSeasonResult',
+        'current_season': 'LegendLeagueTournamentSeasonResult',
+        'legend_trophies': 'int',
+        'previous_builder_base_season': 'LegendLeagueTournamentSeasonResult',
         'previous_season': 'LegendLeagueTournamentSeasonResult'
     }
 
     attribute_map = {
-        'previous_builder_base_season': 'previousBuilderBaseSeason',
         'best_builder_base_season': 'bestBuilderBaseSeason',
-        'legend_trophies': 'legendTrophies',
-        'current_season': 'currentSeason',
         'best_season': 'bestSeason',
+        'current_season': 'currentSeason',
+        'legend_trophies': 'legendTrophies',
+        'previous_builder_base_season': 'previousBuilderBaseSeason',
         'previous_season': 'previousSeason'
     }
 
-    def __init__(self, previous_builder_base_season=None, best_builder_base_season=None, legend_trophies=None, current_season=None, best_season=None, previous_season=None):  # noqa: E501
+    def __init__(self, best_builder_base_season=None, best_season=None, current_season=None, legend_trophies=None, previous_builder_base_season=None, previous_season=None):  # noqa: E501
         """PlayerLegendStatistics - a model defined in Swagger"""  # noqa: E501
-        self._previous_builder_base_season = None
         self._best_builder_base_season = None
-        self._legend_trophies = None
-        self._current_season = None
         self._best_season = None
+        self._current_season = None
+        self._legend_trophies = None
+        self._previous_builder_base_season = None
         self._previous_season = None
         self.discriminator = None
-        if previous_builder_base_season is not None:
-            self.previous_builder_base_season = previous_builder_base_season
         if best_builder_base_season is not None:
             self.best_builder_base_season = best_builder_base_season
-        if legend_trophies is not None:
-            self.legend_trophies = legend_trophies
-        if current_season is not None:
-            self.current_season = current_season
         if best_season is not None:
             self.best_season = best_season
+        if current_season is not None:
+            self.current_season = current_season
+        if legend_trophies is not None:
+            self.legend_trophies = legend_trophies
+        if previous_builder_base_season is not None:
+            self.previous_builder_base_season = previous_builder_base_season
         if previous_season is not None:
             self.previous_season = previous_season
-
-    @property
-    def previous_builder_base_season(self):
-        """Gets the previous_builder_base_season of this PlayerLegendStatistics.  # noqa: E501
-
-
-        :return: The previous_builder_base_season of this PlayerLegendStatistics.  # noqa: E501
-        :rtype: LegendLeagueTournamentSeasonResult
-        """
-        return self._previous_builder_base_season
-
-    @previous_builder_base_season.setter
-    def previous_builder_base_season(self, previous_builder_base_season):
-        """Sets the previous_builder_base_season of this PlayerLegendStatistics.
-
-
-        :param previous_builder_base_season: The previous_builder_base_season of this PlayerLegendStatistics.  # noqa: E501
-        :type: LegendLeagueTournamentSeasonResult
-        """
-
-        self._previous_builder_base_season = previous_builder_base_season
 
     @property
     def best_builder_base_season(self):
@@ -110,25 +89,25 @@ class PlayerLegendStatistics(object):
         self._best_builder_base_season = best_builder_base_season
 
     @property
-    def legend_trophies(self):
-        """Gets the legend_trophies of this PlayerLegendStatistics.  # noqa: E501
+    def best_season(self):
+        """Gets the best_season of this PlayerLegendStatistics.  # noqa: E501
 
 
-        :return: The legend_trophies of this PlayerLegendStatistics.  # noqa: E501
-        :rtype: int
+        :return: The best_season of this PlayerLegendStatistics.  # noqa: E501
+        :rtype: LegendLeagueTournamentSeasonResult
         """
-        return self._legend_trophies
+        return self._best_season
 
-    @legend_trophies.setter
-    def legend_trophies(self, legend_trophies):
-        """Sets the legend_trophies of this PlayerLegendStatistics.
+    @best_season.setter
+    def best_season(self, best_season):
+        """Sets the best_season of this PlayerLegendStatistics.
 
 
-        :param legend_trophies: The legend_trophies of this PlayerLegendStatistics.  # noqa: E501
-        :type: int
+        :param best_season: The best_season of this PlayerLegendStatistics.  # noqa: E501
+        :type: LegendLeagueTournamentSeasonResult
         """
 
-        self._legend_trophies = legend_trophies
+        self._best_season = best_season
 
     @property
     def current_season(self):
@@ -152,25 +131,46 @@ class PlayerLegendStatistics(object):
         self._current_season = current_season
 
     @property
-    def best_season(self):
-        """Gets the best_season of this PlayerLegendStatistics.  # noqa: E501
+    def legend_trophies(self):
+        """Gets the legend_trophies of this PlayerLegendStatistics.  # noqa: E501
 
 
-        :return: The best_season of this PlayerLegendStatistics.  # noqa: E501
+        :return: The legend_trophies of this PlayerLegendStatistics.  # noqa: E501
+        :rtype: int
+        """
+        return self._legend_trophies
+
+    @legend_trophies.setter
+    def legend_trophies(self, legend_trophies):
+        """Sets the legend_trophies of this PlayerLegendStatistics.
+
+
+        :param legend_trophies: The legend_trophies of this PlayerLegendStatistics.  # noqa: E501
+        :type: int
+        """
+
+        self._legend_trophies = legend_trophies
+
+    @property
+    def previous_builder_base_season(self):
+        """Gets the previous_builder_base_season of this PlayerLegendStatistics.  # noqa: E501
+
+
+        :return: The previous_builder_base_season of this PlayerLegendStatistics.  # noqa: E501
         :rtype: LegendLeagueTournamentSeasonResult
         """
-        return self._best_season
+        return self._previous_builder_base_season
 
-    @best_season.setter
-    def best_season(self, best_season):
-        """Sets the best_season of this PlayerLegendStatistics.
+    @previous_builder_base_season.setter
+    def previous_builder_base_season(self, previous_builder_base_season):
+        """Sets the previous_builder_base_season of this PlayerLegendStatistics.
 
 
-        :param best_season: The best_season of this PlayerLegendStatistics.  # noqa: E501
+        :param previous_builder_base_season: The previous_builder_base_season of this PlayerLegendStatistics.  # noqa: E501
         :type: LegendLeagueTournamentSeasonResult
         """
 
-        self._best_season = best_season
+        self._previous_builder_base_season = previous_builder_base_season
 
     @property
     def previous_season(self):

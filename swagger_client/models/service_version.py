@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,29 +28,50 @@ class ServiceVersion(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'content': 'int',
         'major': 'int',
-        'minor': 'int',
-        'content': 'int'
+        'minor': 'int'
     }
 
     attribute_map = {
+        'content': 'content',
         'major': 'major',
-        'minor': 'minor',
-        'content': 'content'
+        'minor': 'minor'
     }
 
-    def __init__(self, major=None, minor=None, content=None):  # noqa: E501
+    def __init__(self, content=None, major=None, minor=None):  # noqa: E501
         """ServiceVersion - a model defined in Swagger"""  # noqa: E501
+        self._content = None
         self._major = None
         self._minor = None
-        self._content = None
         self.discriminator = None
+        if content is not None:
+            self.content = content
         if major is not None:
             self.major = major
         if minor is not None:
             self.minor = minor
-        if content is not None:
-            self.content = content
+
+    @property
+    def content(self):
+        """Gets the content of this ServiceVersion.  # noqa: E501
+
+
+        :return: The content of this ServiceVersion.  # noqa: E501
+        :rtype: int
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this ServiceVersion.
+
+
+        :param content: The content of this ServiceVersion.  # noqa: E501
+        :type: int
+        """
+
+        self._content = content
 
     @property
     def major(self):
@@ -93,27 +114,6 @@ class ServiceVersion(object):
         """
 
         self._minor = minor
-
-    @property
-    def content(self):
-        """Gets the content of this ServiceVersion.  # noqa: E501
-
-
-        :return: The content of this ServiceVersion.  # noqa: E501
-        :rtype: int
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this ServiceVersion.
-
-
-        :param content: The content of this ServiceVersion.  # noqa: E501
-        :type: int
-        """
-
-        self._content = content
 
     def to_dict(self):
         """Returns the model properties as a dict"""

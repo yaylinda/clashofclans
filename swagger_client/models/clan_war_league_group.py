@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,108 +28,39 @@ class ClanWarLeagueGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag': 'str',
-        'state': 'str',
-        'season': 'str',
         'clans': 'ClanWarLeagueClanList',
-        'rounds': 'ClanWarLeagueRoundList'
+        'rounds': 'ClanWarLeagueRoundList',
+        'season': 'str',
+        'state': 'str',
+        'tag': 'str'
     }
 
     attribute_map = {
-        'tag': 'tag',
-        'state': 'state',
-        'season': 'season',
         'clans': 'clans',
-        'rounds': 'rounds'
+        'rounds': 'rounds',
+        'season': 'season',
+        'state': 'state',
+        'tag': 'tag'
     }
 
-    def __init__(self, tag=None, state=None, season=None, clans=None, rounds=None):  # noqa: E501
+    def __init__(self, clans=None, rounds=None, season=None, state=None, tag=None):  # noqa: E501
         """ClanWarLeagueGroup - a model defined in Swagger"""  # noqa: E501
-        self._tag = None
-        self._state = None
-        self._season = None
         self._clans = None
         self._rounds = None
+        self._season = None
+        self._state = None
+        self._tag = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
-        if state is not None:
-            self.state = state
-        if season is not None:
-            self.season = season
         if clans is not None:
             self.clans = clans
         if rounds is not None:
             self.rounds = rounds
-
-    @property
-    def tag(self):
-        """Gets the tag of this ClanWarLeagueGroup.  # noqa: E501
-
-
-        :return: The tag of this ClanWarLeagueGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanWarLeagueGroup.
-
-
-        :param tag: The tag of this ClanWarLeagueGroup.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def state(self):
-        """Gets the state of this ClanWarLeagueGroup.  # noqa: E501
-
-
-        :return: The state of this ClanWarLeagueGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """Sets the state of this ClanWarLeagueGroup.
-
-
-        :param state: The state of this ClanWarLeagueGroup.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["GROUP_NOT_FOUND", "NOT_IN_WAR", "PREPARATION", "WAR", "ENDED"]  # noqa: E501
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
-                .format(state, allowed_values)
-            )
-
-        self._state = state
-
-    @property
-    def season(self):
-        """Gets the season of this ClanWarLeagueGroup.  # noqa: E501
-
-
-        :return: The season of this ClanWarLeagueGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._season
-
-    @season.setter
-    def season(self, season):
-        """Sets the season of this ClanWarLeagueGroup.
-
-
-        :param season: The season of this ClanWarLeagueGroup.  # noqa: E501
-        :type: str
-        """
-
-        self._season = season
+        if season is not None:
+            self.season = season
+        if state is not None:
+            self.state = state
+        if tag is not None:
+            self.tag = tag
 
     @property
     def clans(self):
@@ -172,6 +103,75 @@ class ClanWarLeagueGroup(object):
         """
 
         self._rounds = rounds
+
+    @property
+    def season(self):
+        """Gets the season of this ClanWarLeagueGroup.  # noqa: E501
+
+
+        :return: The season of this ClanWarLeagueGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._season
+
+    @season.setter
+    def season(self, season):
+        """Sets the season of this ClanWarLeagueGroup.
+
+
+        :param season: The season of this ClanWarLeagueGroup.  # noqa: E501
+        :type: str
+        """
+
+        self._season = season
+
+    @property
+    def state(self):
+        """Gets the state of this ClanWarLeagueGroup.  # noqa: E501
+
+
+        :return: The state of this ClanWarLeagueGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this ClanWarLeagueGroup.
+
+
+        :param state: The state of this ClanWarLeagueGroup.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["groupNotFound", "notInWar", "preparation", "war", "ended"]  # noqa: E501
+        if state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
+                .format(state, allowed_values)
+            )
+
+        self._state = state
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanWarLeagueGroup.  # noqa: E501
+
+
+        :return: The tag of this ClanWarLeagueGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanWarLeagueGroup.
+
+
+        :param tag: The tag of this ClanWarLeagueGroup.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

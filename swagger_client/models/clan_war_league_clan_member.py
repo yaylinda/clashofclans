@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,29 +28,50 @@ class ClanWarLeagueClanMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'name': 'str',
         'tag': 'str',
-        'town_hall_level': 'int',
-        'name': 'str'
+        'town_hall_level': 'int'
     }
 
     attribute_map = {
+        'name': 'name',
         'tag': 'tag',
-        'town_hall_level': 'townHallLevel',
-        'name': 'name'
+        'town_hall_level': 'townHallLevel'
     }
 
-    def __init__(self, tag=None, town_hall_level=None, name=None):  # noqa: E501
+    def __init__(self, name=None, tag=None, town_hall_level=None):  # noqa: E501
         """ClanWarLeagueClanMember - a model defined in Swagger"""  # noqa: E501
+        self._name = None
         self._tag = None
         self._town_hall_level = None
-        self._name = None
         self.discriminator = None
+        if name is not None:
+            self.name = name
         if tag is not None:
             self.tag = tag
         if town_hall_level is not None:
             self.town_hall_level = town_hall_level
-        if name is not None:
-            self.name = name
+
+    @property
+    def name(self):
+        """Gets the name of this ClanWarLeagueClanMember.  # noqa: E501
+
+
+        :return: The name of this ClanWarLeagueClanMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanWarLeagueClanMember.
+
+
+        :param name: The name of this ClanWarLeagueClanMember.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def tag(self):
@@ -93,27 +114,6 @@ class ClanWarLeagueClanMember(object):
         """
 
         self._town_hall_level = town_hall_level
-
-    @property
-    def name(self):
-        """Gets the name of this ClanWarLeagueClanMember.  # noqa: E501
-
-
-        :return: The name of this ClanWarLeagueClanMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanWarLeagueClanMember.
-
-
-        :param name: The name of this ClanWarLeagueClanMember.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,76 +28,55 @@ class ClanCapitalRaidSeasonClanInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag': 'str',
-        'name': 'str',
+        'badge_urls': 'object',
         'level': 'int',
-        'badge_urls': 'object'
+        'name': 'str',
+        'tag': 'str'
     }
 
     attribute_map = {
-        'tag': 'tag',
-        'name': 'name',
+        'badge_urls': 'badgeUrls',
         'level': 'level',
-        'badge_urls': 'badgeUrls'
+        'name': 'name',
+        'tag': 'tag'
     }
 
-    def __init__(self, tag=None, name=None, level=None, badge_urls=None):  # noqa: E501
+    def __init__(self, badge_urls=None, level=None, name=None, tag=None):  # noqa: E501
         """ClanCapitalRaidSeasonClanInfo - a model defined in Swagger"""  # noqa: E501
-        self._tag = None
-        self._name = None
-        self._level = None
         self._badge_urls = None
+        self._level = None
+        self._name = None
+        self._tag = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
-        if level is not None:
-            self.level = level
         if badge_urls is not None:
             self.badge_urls = badge_urls
+        if level is not None:
+            self.level = level
+        if name is not None:
+            self.name = name
+        if tag is not None:
+            self.tag = tag
 
     @property
-    def tag(self):
-        """Gets the tag of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+    def badge_urls(self):
+        """Gets the badge_urls of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
 
 
-        :return: The tag of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
-        :rtype: str
+        :return: The badge_urls of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+        :rtype: object
         """
-        return self._tag
+        return self._badge_urls
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanCapitalRaidSeasonClanInfo.
-
-
-        :param tag: The tag of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+    @badge_urls.setter
+    def badge_urls(self, badge_urls):
+        """Sets the badge_urls of this ClanCapitalRaidSeasonClanInfo.
 
 
-        :return: The name of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanCapitalRaidSeasonClanInfo.
-
-
-        :param name: The name of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
-        :type: str
+        :param badge_urls: The badge_urls of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+        :type: object
         """
 
-        self._name = name
+        self._badge_urls = badge_urls
 
     @property
     def level(self):
@@ -121,25 +100,46 @@ class ClanCapitalRaidSeasonClanInfo(object):
         self._level = level
 
     @property
-    def badge_urls(self):
-        """Gets the badge_urls of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+    def name(self):
+        """Gets the name of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
 
 
-        :return: The badge_urls of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
-        :rtype: object
+        :return: The name of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+        :rtype: str
         """
-        return self._badge_urls
+        return self._name
 
-    @badge_urls.setter
-    def badge_urls(self, badge_urls):
-        """Sets the badge_urls of this ClanCapitalRaidSeasonClanInfo.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanCapitalRaidSeasonClanInfo.
 
 
-        :param badge_urls: The badge_urls of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
-        :type: object
+        :param name: The name of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+        :type: str
         """
 
-        self._badge_urls = badge_urls
+        self._name = name
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+
+
+        :return: The tag of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanCapitalRaidSeasonClanInfo.
+
+
+        :param tag: The tag of this ClanCapitalRaidSeasonClanInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

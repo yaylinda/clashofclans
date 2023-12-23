@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,60 +28,39 @@ class ClanCapitalRaidSeasonAttackLogEntry(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'defender': 'ClanCapitalRaidSeasonClanInfo',
         'attack_count': 'int',
+        'defender': 'ClanCapitalRaidSeasonClanInfo',
         'district_count': 'int',
-        'districts_destroyed': 'int',
-        'districts': 'ClanCapitalRaidSeasonDistrictList'
+        'districts': 'ClanCapitalRaidSeasonDistrictList',
+        'districts_destroyed': 'int'
     }
 
     attribute_map = {
-        'defender': 'defender',
         'attack_count': 'attackCount',
+        'defender': 'defender',
         'district_count': 'districtCount',
-        'districts_destroyed': 'districtsDestroyed',
-        'districts': 'districts'
+        'districts': 'districts',
+        'districts_destroyed': 'districtsDestroyed'
     }
 
-    def __init__(self, defender=None, attack_count=None, district_count=None, districts_destroyed=None, districts=None):  # noqa: E501
+    def __init__(self, attack_count=None, defender=None, district_count=None, districts=None, districts_destroyed=None):  # noqa: E501
         """ClanCapitalRaidSeasonAttackLogEntry - a model defined in Swagger"""  # noqa: E501
-        self._defender = None
         self._attack_count = None
+        self._defender = None
         self._district_count = None
-        self._districts_destroyed = None
         self._districts = None
+        self._districts_destroyed = None
         self.discriminator = None
-        if defender is not None:
-            self.defender = defender
         if attack_count is not None:
             self.attack_count = attack_count
+        if defender is not None:
+            self.defender = defender
         if district_count is not None:
             self.district_count = district_count
-        if districts_destroyed is not None:
-            self.districts_destroyed = districts_destroyed
         if districts is not None:
             self.districts = districts
-
-    @property
-    def defender(self):
-        """Gets the defender of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
-
-
-        :return: The defender of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
-        :rtype: ClanCapitalRaidSeasonClanInfo
-        """
-        return self._defender
-
-    @defender.setter
-    def defender(self, defender):
-        """Sets the defender of this ClanCapitalRaidSeasonAttackLogEntry.
-
-
-        :param defender: The defender of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
-        :type: ClanCapitalRaidSeasonClanInfo
-        """
-
-        self._defender = defender
+        if districts_destroyed is not None:
+            self.districts_destroyed = districts_destroyed
 
     @property
     def attack_count(self):
@@ -105,6 +84,27 @@ class ClanCapitalRaidSeasonAttackLogEntry(object):
         self._attack_count = attack_count
 
     @property
+    def defender(self):
+        """Gets the defender of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
+
+
+        :return: The defender of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
+        :rtype: ClanCapitalRaidSeasonClanInfo
+        """
+        return self._defender
+
+    @defender.setter
+    def defender(self, defender):
+        """Sets the defender of this ClanCapitalRaidSeasonAttackLogEntry.
+
+
+        :param defender: The defender of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
+        :type: ClanCapitalRaidSeasonClanInfo
+        """
+
+        self._defender = defender
+
+    @property
     def district_count(self):
         """Gets the district_count of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
 
@@ -126,27 +126,6 @@ class ClanCapitalRaidSeasonAttackLogEntry(object):
         self._district_count = district_count
 
     @property
-    def districts_destroyed(self):
-        """Gets the districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
-
-
-        :return: The districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
-        :rtype: int
-        """
-        return self._districts_destroyed
-
-    @districts_destroyed.setter
-    def districts_destroyed(self, districts_destroyed):
-        """Sets the districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.
-
-
-        :param districts_destroyed: The districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
-        :type: int
-        """
-
-        self._districts_destroyed = districts_destroyed
-
-    @property
     def districts(self):
         """Gets the districts of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
 
@@ -166,6 +145,27 @@ class ClanCapitalRaidSeasonAttackLogEntry(object):
         """
 
         self._districts = districts
+
+    @property
+    def districts_destroyed(self):
+        """Gets the districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
+
+
+        :return: The districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
+        :rtype: int
+        """
+        return self._districts_destroyed
+
+    @districts_destroyed.setter
+    def districts_destroyed(self, districts_destroyed):
+        """Sets the districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.
+
+
+        :param districts_destroyed: The districts_destroyed of this ClanCapitalRaidSeasonAttackLogEntry.  # noqa: E501
+        :type: int
+        """
+
+        self._districts_destroyed = districts_destroyed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

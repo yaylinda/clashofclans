@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,170 +28,170 @@ class Clan(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'war_league': 'WarLeague',
+        'badge_urls': 'object',
         'capital_league': 'CapitalLeague',
-        'member_list': 'ClanMemberList',
-        'tag': 'str',
+        'chat_language': 'Language',
         'clan_builder_base_points': 'int',
+        'clan_capital': 'ClanCapital',
         'clan_capital_points': 'int',
-        'required_trophies': 'int',
-        'required_builder_base_trophies': 'int',
-        'required_townhall_level': 'int',
+        'clan_level': 'int',
+        'clan_points': 'int',
+        'description': 'str',
         'is_family_friendly': 'bool',
         'is_war_log_public': 'bool',
-        'war_frequency': 'str',
-        'clan_level': 'int',
-        'war_win_streak': 'int',
-        'war_wins': 'int',
-        'war_ties': 'int',
-        'war_losses': 'int',
-        'clan_points': 'int',
-        'chat_language': 'Language',
         'labels': 'LabelList',
-        'name': 'str',
         'location': 'Location',
-        'type': 'str',
+        'member_list': 'ClanMemberList',
         'members': 'int',
-        'description': 'str',
-        'clan_capital': 'ClanCapital',
-        'badge_urls': 'object'
+        'name': 'str',
+        'required_builder_base_trophies': 'int',
+        'required_townhall_level': 'int',
+        'required_trophies': 'int',
+        'tag': 'str',
+        'type': 'str',
+        'war_frequency': 'str',
+        'war_league': 'WarLeague',
+        'war_losses': 'int',
+        'war_ties': 'int',
+        'war_win_streak': 'int',
+        'war_wins': 'int'
     }
 
     attribute_map = {
-        'war_league': 'warLeague',
+        'badge_urls': 'badgeUrls',
         'capital_league': 'capitalLeague',
-        'member_list': 'memberList',
-        'tag': 'tag',
+        'chat_language': 'chatLanguage',
         'clan_builder_base_points': 'clanBuilderBasePoints',
+        'clan_capital': 'clanCapital',
         'clan_capital_points': 'clanCapitalPoints',
-        'required_trophies': 'requiredTrophies',
-        'required_builder_base_trophies': 'requiredBuilderBaseTrophies',
-        'required_townhall_level': 'requiredTownhallLevel',
+        'clan_level': 'clanLevel',
+        'clan_points': 'clanPoints',
+        'description': 'description',
         'is_family_friendly': 'isFamilyFriendly',
         'is_war_log_public': 'isWarLogPublic',
-        'war_frequency': 'warFrequency',
-        'clan_level': 'clanLevel',
-        'war_win_streak': 'warWinStreak',
-        'war_wins': 'warWins',
-        'war_ties': 'warTies',
-        'war_losses': 'warLosses',
-        'clan_points': 'clanPoints',
-        'chat_language': 'chatLanguage',
         'labels': 'labels',
-        'name': 'name',
         'location': 'location',
-        'type': 'type',
+        'member_list': 'memberList',
         'members': 'members',
-        'description': 'description',
-        'clan_capital': 'clanCapital',
-        'badge_urls': 'badgeUrls'
+        'name': 'name',
+        'required_builder_base_trophies': 'requiredBuilderBaseTrophies',
+        'required_townhall_level': 'requiredTownhallLevel',
+        'required_trophies': 'requiredTrophies',
+        'tag': 'tag',
+        'type': 'type',
+        'war_frequency': 'warFrequency',
+        'war_league': 'warLeague',
+        'war_losses': 'warLosses',
+        'war_ties': 'warTies',
+        'war_win_streak': 'warWinStreak',
+        'war_wins': 'warWins'
     }
 
-    def __init__(self, war_league=None, capital_league=None, member_list=None, tag=None, clan_builder_base_points=None, clan_capital_points=None, required_trophies=None, required_builder_base_trophies=None, required_townhall_level=None, is_family_friendly=None, is_war_log_public=None, war_frequency=None, clan_level=None, war_win_streak=None, war_wins=None, war_ties=None, war_losses=None, clan_points=None, chat_language=None, labels=None, name=None, location=None, type=None, members=None, description=None, clan_capital=None, badge_urls=None):  # noqa: E501
+    def __init__(self, badge_urls=None, capital_league=None, chat_language=None, clan_builder_base_points=None, clan_capital=None, clan_capital_points=None, clan_level=None, clan_points=None, description=None, is_family_friendly=None, is_war_log_public=None, labels=None, location=None, member_list=None, members=None, name=None, required_builder_base_trophies=None, required_townhall_level=None, required_trophies=None, tag=None, type=None, war_frequency=None, war_league=None, war_losses=None, war_ties=None, war_win_streak=None, war_wins=None):  # noqa: E501
         """Clan - a model defined in Swagger"""  # noqa: E501
-        self._war_league = None
+        self._badge_urls = None
         self._capital_league = None
-        self._member_list = None
-        self._tag = None
+        self._chat_language = None
         self._clan_builder_base_points = None
+        self._clan_capital = None
         self._clan_capital_points = None
-        self._required_trophies = None
-        self._required_builder_base_trophies = None
-        self._required_townhall_level = None
+        self._clan_level = None
+        self._clan_points = None
+        self._description = None
         self._is_family_friendly = None
         self._is_war_log_public = None
+        self._labels = None
+        self._location = None
+        self._member_list = None
+        self._members = None
+        self._name = None
+        self._required_builder_base_trophies = None
+        self._required_townhall_level = None
+        self._required_trophies = None
+        self._tag = None
+        self._type = None
         self._war_frequency = None
-        self._clan_level = None
+        self._war_league = None
+        self._war_losses = None
+        self._war_ties = None
         self._war_win_streak = None
         self._war_wins = None
-        self._war_ties = None
-        self._war_losses = None
-        self._clan_points = None
-        self._chat_language = None
-        self._labels = None
-        self._name = None
-        self._location = None
-        self._type = None
-        self._members = None
-        self._description = None
-        self._clan_capital = None
-        self._badge_urls = None
         self.discriminator = None
-        if war_league is not None:
-            self.war_league = war_league
+        if badge_urls is not None:
+            self.badge_urls = badge_urls
         if capital_league is not None:
             self.capital_league = capital_league
-        if member_list is not None:
-            self.member_list = member_list
-        if tag is not None:
-            self.tag = tag
+        if chat_language is not None:
+            self.chat_language = chat_language
         if clan_builder_base_points is not None:
             self.clan_builder_base_points = clan_builder_base_points
+        if clan_capital is not None:
+            self.clan_capital = clan_capital
         if clan_capital_points is not None:
             self.clan_capital_points = clan_capital_points
-        if required_trophies is not None:
-            self.required_trophies = required_trophies
-        if required_builder_base_trophies is not None:
-            self.required_builder_base_trophies = required_builder_base_trophies
-        if required_townhall_level is not None:
-            self.required_townhall_level = required_townhall_level
+        if clan_level is not None:
+            self.clan_level = clan_level
+        if clan_points is not None:
+            self.clan_points = clan_points
+        if description is not None:
+            self.description = description
         if is_family_friendly is not None:
             self.is_family_friendly = is_family_friendly
         if is_war_log_public is not None:
             self.is_war_log_public = is_war_log_public
+        if labels is not None:
+            self.labels = labels
+        if location is not None:
+            self.location = location
+        if member_list is not None:
+            self.member_list = member_list
+        if members is not None:
+            self.members = members
+        if name is not None:
+            self.name = name
+        if required_builder_base_trophies is not None:
+            self.required_builder_base_trophies = required_builder_base_trophies
+        if required_townhall_level is not None:
+            self.required_townhall_level = required_townhall_level
+        if required_trophies is not None:
+            self.required_trophies = required_trophies
+        if tag is not None:
+            self.tag = tag
+        if type is not None:
+            self.type = type
         if war_frequency is not None:
             self.war_frequency = war_frequency
-        if clan_level is not None:
-            self.clan_level = clan_level
+        if war_league is not None:
+            self.war_league = war_league
+        if war_losses is not None:
+            self.war_losses = war_losses
+        if war_ties is not None:
+            self.war_ties = war_ties
         if war_win_streak is not None:
             self.war_win_streak = war_win_streak
         if war_wins is not None:
             self.war_wins = war_wins
-        if war_ties is not None:
-            self.war_ties = war_ties
-        if war_losses is not None:
-            self.war_losses = war_losses
-        if clan_points is not None:
-            self.clan_points = clan_points
-        if chat_language is not None:
-            self.chat_language = chat_language
-        if labels is not None:
-            self.labels = labels
-        if name is not None:
-            self.name = name
-        if location is not None:
-            self.location = location
-        if type is not None:
-            self.type = type
-        if members is not None:
-            self.members = members
-        if description is not None:
-            self.description = description
-        if clan_capital is not None:
-            self.clan_capital = clan_capital
-        if badge_urls is not None:
-            self.badge_urls = badge_urls
 
     @property
-    def war_league(self):
-        """Gets the war_league of this Clan.  # noqa: E501
+    def badge_urls(self):
+        """Gets the badge_urls of this Clan.  # noqa: E501
 
 
-        :return: The war_league of this Clan.  # noqa: E501
-        :rtype: WarLeague
+        :return: The badge_urls of this Clan.  # noqa: E501
+        :rtype: object
         """
-        return self._war_league
+        return self._badge_urls
 
-    @war_league.setter
-    def war_league(self, war_league):
-        """Sets the war_league of this Clan.
+    @badge_urls.setter
+    def badge_urls(self, badge_urls):
+        """Sets the badge_urls of this Clan.
 
 
-        :param war_league: The war_league of this Clan.  # noqa: E501
-        :type: WarLeague
+        :param badge_urls: The badge_urls of this Clan.  # noqa: E501
+        :type: object
         """
 
-        self._war_league = war_league
+        self._badge_urls = badge_urls
 
     @property
     def capital_league(self):
@@ -215,46 +215,25 @@ class Clan(object):
         self._capital_league = capital_league
 
     @property
-    def member_list(self):
-        """Gets the member_list of this Clan.  # noqa: E501
+    def chat_language(self):
+        """Gets the chat_language of this Clan.  # noqa: E501
 
 
-        :return: The member_list of this Clan.  # noqa: E501
-        :rtype: ClanMemberList
+        :return: The chat_language of this Clan.  # noqa: E501
+        :rtype: Language
         """
-        return self._member_list
+        return self._chat_language
 
-    @member_list.setter
-    def member_list(self, member_list):
-        """Sets the member_list of this Clan.
-
-
-        :param member_list: The member_list of this Clan.  # noqa: E501
-        :type: ClanMemberList
-        """
-
-        self._member_list = member_list
-
-    @property
-    def tag(self):
-        """Gets the tag of this Clan.  # noqa: E501
+    @chat_language.setter
+    def chat_language(self, chat_language):
+        """Sets the chat_language of this Clan.
 
 
-        :return: The tag of this Clan.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this Clan.
-
-
-        :param tag: The tag of this Clan.  # noqa: E501
-        :type: str
+        :param chat_language: The chat_language of this Clan.  # noqa: E501
+        :type: Language
         """
 
-        self._tag = tag
+        self._chat_language = chat_language
 
     @property
     def clan_builder_base_points(self):
@@ -278,6 +257,27 @@ class Clan(object):
         self._clan_builder_base_points = clan_builder_base_points
 
     @property
+    def clan_capital(self):
+        """Gets the clan_capital of this Clan.  # noqa: E501
+
+
+        :return: The clan_capital of this Clan.  # noqa: E501
+        :rtype: ClanCapital
+        """
+        return self._clan_capital
+
+    @clan_capital.setter
+    def clan_capital(self, clan_capital):
+        """Sets the clan_capital of this Clan.
+
+
+        :param clan_capital: The clan_capital of this Clan.  # noqa: E501
+        :type: ClanCapital
+        """
+
+        self._clan_capital = clan_capital
+
+    @property
     def clan_capital_points(self):
         """Gets the clan_capital_points of this Clan.  # noqa: E501
 
@@ -299,67 +299,67 @@ class Clan(object):
         self._clan_capital_points = clan_capital_points
 
     @property
-    def required_trophies(self):
-        """Gets the required_trophies of this Clan.  # noqa: E501
+    def clan_level(self):
+        """Gets the clan_level of this Clan.  # noqa: E501
 
 
-        :return: The required_trophies of this Clan.  # noqa: E501
+        :return: The clan_level of this Clan.  # noqa: E501
         :rtype: int
         """
-        return self._required_trophies
+        return self._clan_level
 
-    @required_trophies.setter
-    def required_trophies(self, required_trophies):
-        """Sets the required_trophies of this Clan.
+    @clan_level.setter
+    def clan_level(self, clan_level):
+        """Sets the clan_level of this Clan.
 
 
-        :param required_trophies: The required_trophies of this Clan.  # noqa: E501
+        :param clan_level: The clan_level of this Clan.  # noqa: E501
         :type: int
         """
 
-        self._required_trophies = required_trophies
+        self._clan_level = clan_level
 
     @property
-    def required_builder_base_trophies(self):
-        """Gets the required_builder_base_trophies of this Clan.  # noqa: E501
+    def clan_points(self):
+        """Gets the clan_points of this Clan.  # noqa: E501
 
 
-        :return: The required_builder_base_trophies of this Clan.  # noqa: E501
+        :return: The clan_points of this Clan.  # noqa: E501
         :rtype: int
         """
-        return self._required_builder_base_trophies
+        return self._clan_points
 
-    @required_builder_base_trophies.setter
-    def required_builder_base_trophies(self, required_builder_base_trophies):
-        """Sets the required_builder_base_trophies of this Clan.
+    @clan_points.setter
+    def clan_points(self, clan_points):
+        """Sets the clan_points of this Clan.
 
 
-        :param required_builder_base_trophies: The required_builder_base_trophies of this Clan.  # noqa: E501
+        :param clan_points: The clan_points of this Clan.  # noqa: E501
         :type: int
         """
 
-        self._required_builder_base_trophies = required_builder_base_trophies
+        self._clan_points = clan_points
 
     @property
-    def required_townhall_level(self):
-        """Gets the required_townhall_level of this Clan.  # noqa: E501
+    def description(self):
+        """Gets the description of this Clan.  # noqa: E501
 
 
-        :return: The required_townhall_level of this Clan.  # noqa: E501
-        :rtype: int
+        :return: The description of this Clan.  # noqa: E501
+        :rtype: str
         """
-        return self._required_townhall_level
+        return self._description
 
-    @required_townhall_level.setter
-    def required_townhall_level(self, required_townhall_level):
-        """Sets the required_townhall_level of this Clan.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Clan.
 
 
-        :param required_townhall_level: The required_townhall_level of this Clan.  # noqa: E501
-        :type: int
+        :param description: The description of this Clan.  # noqa: E501
+        :type: str
         """
 
-        self._required_townhall_level = required_townhall_level
+        self._description = description
 
     @property
     def is_family_friendly(self):
@@ -404,6 +404,222 @@ class Clan(object):
         self._is_war_log_public = is_war_log_public
 
     @property
+    def labels(self):
+        """Gets the labels of this Clan.  # noqa: E501
+
+
+        :return: The labels of this Clan.  # noqa: E501
+        :rtype: LabelList
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this Clan.
+
+
+        :param labels: The labels of this Clan.  # noqa: E501
+        :type: LabelList
+        """
+
+        self._labels = labels
+
+    @property
+    def location(self):
+        """Gets the location of this Clan.  # noqa: E501
+
+
+        :return: The location of this Clan.  # noqa: E501
+        :rtype: Location
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """Sets the location of this Clan.
+
+
+        :param location: The location of this Clan.  # noqa: E501
+        :type: Location
+        """
+
+        self._location = location
+
+    @property
+    def member_list(self):
+        """Gets the member_list of this Clan.  # noqa: E501
+
+
+        :return: The member_list of this Clan.  # noqa: E501
+        :rtype: ClanMemberList
+        """
+        return self._member_list
+
+    @member_list.setter
+    def member_list(self, member_list):
+        """Sets the member_list of this Clan.
+
+
+        :param member_list: The member_list of this Clan.  # noqa: E501
+        :type: ClanMemberList
+        """
+
+        self._member_list = member_list
+
+    @property
+    def members(self):
+        """Gets the members of this Clan.  # noqa: E501
+
+
+        :return: The members of this Clan.  # noqa: E501
+        :rtype: int
+        """
+        return self._members
+
+    @members.setter
+    def members(self, members):
+        """Sets the members of this Clan.
+
+
+        :param members: The members of this Clan.  # noqa: E501
+        :type: int
+        """
+
+        self._members = members
+
+    @property
+    def name(self):
+        """Gets the name of this Clan.  # noqa: E501
+
+
+        :return: The name of this Clan.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Clan.
+
+
+        :param name: The name of this Clan.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def required_builder_base_trophies(self):
+        """Gets the required_builder_base_trophies of this Clan.  # noqa: E501
+
+
+        :return: The required_builder_base_trophies of this Clan.  # noqa: E501
+        :rtype: int
+        """
+        return self._required_builder_base_trophies
+
+    @required_builder_base_trophies.setter
+    def required_builder_base_trophies(self, required_builder_base_trophies):
+        """Sets the required_builder_base_trophies of this Clan.
+
+
+        :param required_builder_base_trophies: The required_builder_base_trophies of this Clan.  # noqa: E501
+        :type: int
+        """
+
+        self._required_builder_base_trophies = required_builder_base_trophies
+
+    @property
+    def required_townhall_level(self):
+        """Gets the required_townhall_level of this Clan.  # noqa: E501
+
+
+        :return: The required_townhall_level of this Clan.  # noqa: E501
+        :rtype: int
+        """
+        return self._required_townhall_level
+
+    @required_townhall_level.setter
+    def required_townhall_level(self, required_townhall_level):
+        """Sets the required_townhall_level of this Clan.
+
+
+        :param required_townhall_level: The required_townhall_level of this Clan.  # noqa: E501
+        :type: int
+        """
+
+        self._required_townhall_level = required_townhall_level
+
+    @property
+    def required_trophies(self):
+        """Gets the required_trophies of this Clan.  # noqa: E501
+
+
+        :return: The required_trophies of this Clan.  # noqa: E501
+        :rtype: int
+        """
+        return self._required_trophies
+
+    @required_trophies.setter
+    def required_trophies(self, required_trophies):
+        """Sets the required_trophies of this Clan.
+
+
+        :param required_trophies: The required_trophies of this Clan.  # noqa: E501
+        :type: int
+        """
+
+        self._required_trophies = required_trophies
+
+    @property
+    def tag(self):
+        """Gets the tag of this Clan.  # noqa: E501
+
+
+        :return: The tag of this Clan.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this Clan.
+
+
+        :param tag: The tag of this Clan.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
+
+    @property
+    def type(self):
+        """Gets the type of this Clan.  # noqa: E501
+
+
+        :return: The type of this Clan.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Clan.
+
+
+        :param type: The type of this Clan.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["open", "inviteOnly", "closed"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
+
+        self._type = type
+
+    @property
     def war_frequency(self):
         """Gets the war_frequency of this Clan.  # noqa: E501
 
@@ -421,8 +637,8 @@ class Clan(object):
         :param war_frequency: The war_frequency of this Clan.  # noqa: E501
         :type: str
         """
-        allowed_values = ["UNKNOWN", "ALWAYS", "MORE_THAN_ONCE_PER_WEEK", "ONCE_PER_WEEK", "LESS_THAN_ONCE_PER_WEEK", "NEVER", "ANY"]  # noqa: E501
-        if war_frequency.upper() not in allowed_values:
+        allowed_values = ["unknown", "always", "moreThanOncePerWeek", "oncePerWeek", "lessThanOncePerWeek", "never", "any"]  # noqa: E501
+        if war_frequency not in allowed_values:
             raise ValueError(
                 "Invalid value for `war_frequency` ({0}), must be one of {1}"  # noqa: E501
                 .format(war_frequency, allowed_values)
@@ -431,25 +647,67 @@ class Clan(object):
         self._war_frequency = war_frequency
 
     @property
-    def clan_level(self):
-        """Gets the clan_level of this Clan.  # noqa: E501
+    def war_league(self):
+        """Gets the war_league of this Clan.  # noqa: E501
 
 
-        :return: The clan_level of this Clan.  # noqa: E501
+        :return: The war_league of this Clan.  # noqa: E501
+        :rtype: WarLeague
+        """
+        return self._war_league
+
+    @war_league.setter
+    def war_league(self, war_league):
+        """Sets the war_league of this Clan.
+
+
+        :param war_league: The war_league of this Clan.  # noqa: E501
+        :type: WarLeague
+        """
+
+        self._war_league = war_league
+
+    @property
+    def war_losses(self):
+        """Gets the war_losses of this Clan.  # noqa: E501
+
+
+        :return: The war_losses of this Clan.  # noqa: E501
         :rtype: int
         """
-        return self._clan_level
+        return self._war_losses
 
-    @clan_level.setter
-    def clan_level(self, clan_level):
-        """Sets the clan_level of this Clan.
+    @war_losses.setter
+    def war_losses(self, war_losses):
+        """Sets the war_losses of this Clan.
 
 
-        :param clan_level: The clan_level of this Clan.  # noqa: E501
+        :param war_losses: The war_losses of this Clan.  # noqa: E501
         :type: int
         """
 
-        self._clan_level = clan_level
+        self._war_losses = war_losses
+
+    @property
+    def war_ties(self):
+        """Gets the war_ties of this Clan.  # noqa: E501
+
+
+        :return: The war_ties of this Clan.  # noqa: E501
+        :rtype: int
+        """
+        return self._war_ties
+
+    @war_ties.setter
+    def war_ties(self, war_ties):
+        """Sets the war_ties of this Clan.
+
+
+        :param war_ties: The war_ties of this Clan.  # noqa: E501
+        :type: int
+        """
+
+        self._war_ties = war_ties
 
     @property
     def war_win_streak(self):
@@ -492,264 +750,6 @@ class Clan(object):
         """
 
         self._war_wins = war_wins
-
-    @property
-    def war_ties(self):
-        """Gets the war_ties of this Clan.  # noqa: E501
-
-
-        :return: The war_ties of this Clan.  # noqa: E501
-        :rtype: int
-        """
-        return self._war_ties
-
-    @war_ties.setter
-    def war_ties(self, war_ties):
-        """Sets the war_ties of this Clan.
-
-
-        :param war_ties: The war_ties of this Clan.  # noqa: E501
-        :type: int
-        """
-
-        self._war_ties = war_ties
-
-    @property
-    def war_losses(self):
-        """Gets the war_losses of this Clan.  # noqa: E501
-
-
-        :return: The war_losses of this Clan.  # noqa: E501
-        :rtype: int
-        """
-        return self._war_losses
-
-    @war_losses.setter
-    def war_losses(self, war_losses):
-        """Sets the war_losses of this Clan.
-
-
-        :param war_losses: The war_losses of this Clan.  # noqa: E501
-        :type: int
-        """
-
-        self._war_losses = war_losses
-
-    @property
-    def clan_points(self):
-        """Gets the clan_points of this Clan.  # noqa: E501
-
-
-        :return: The clan_points of this Clan.  # noqa: E501
-        :rtype: int
-        """
-        return self._clan_points
-
-    @clan_points.setter
-    def clan_points(self, clan_points):
-        """Sets the clan_points of this Clan.
-
-
-        :param clan_points: The clan_points of this Clan.  # noqa: E501
-        :type: int
-        """
-
-        self._clan_points = clan_points
-
-    @property
-    def chat_language(self):
-        """Gets the chat_language of this Clan.  # noqa: E501
-
-
-        :return: The chat_language of this Clan.  # noqa: E501
-        :rtype: Language
-        """
-        return self._chat_language
-
-    @chat_language.setter
-    def chat_language(self, chat_language):
-        """Sets the chat_language of this Clan.
-
-
-        :param chat_language: The chat_language of this Clan.  # noqa: E501
-        :type: Language
-        """
-
-        self._chat_language = chat_language
-
-    @property
-    def labels(self):
-        """Gets the labels of this Clan.  # noqa: E501
-
-
-        :return: The labels of this Clan.  # noqa: E501
-        :rtype: LabelList
-        """
-        return self._labels
-
-    @labels.setter
-    def labels(self, labels):
-        """Sets the labels of this Clan.
-
-
-        :param labels: The labels of this Clan.  # noqa: E501
-        :type: LabelList
-        """
-
-        self._labels = labels
-
-    @property
-    def name(self):
-        """Gets the name of this Clan.  # noqa: E501
-
-
-        :return: The name of this Clan.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Clan.
-
-
-        :param name: The name of this Clan.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def location(self):
-        """Gets the location of this Clan.  # noqa: E501
-
-
-        :return: The location of this Clan.  # noqa: E501
-        :rtype: Location
-        """
-        return self._location
-
-    @location.setter
-    def location(self, location):
-        """Sets the location of this Clan.
-
-
-        :param location: The location of this Clan.  # noqa: E501
-        :type: Location
-        """
-
-        self._location = location
-
-    @property
-    def type(self):
-        """Gets the type of this Clan.  # noqa: E501
-
-
-        :return: The type of this Clan.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this Clan.
-
-
-        :param type: The type of this Clan.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["OPEN", "INVITE_ONLY", "CLOSED"]  # noqa: E501
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
-
-    @property
-    def members(self):
-        """Gets the members of this Clan.  # noqa: E501
-
-
-        :return: The members of this Clan.  # noqa: E501
-        :rtype: int
-        """
-        return self._members
-
-    @members.setter
-    def members(self, members):
-        """Sets the members of this Clan.
-
-
-        :param members: The members of this Clan.  # noqa: E501
-        :type: int
-        """
-
-        self._members = members
-
-    @property
-    def description(self):
-        """Gets the description of this Clan.  # noqa: E501
-
-
-        :return: The description of this Clan.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Clan.
-
-
-        :param description: The description of this Clan.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def clan_capital(self):
-        """Gets the clan_capital of this Clan.  # noqa: E501
-
-
-        :return: The clan_capital of this Clan.  # noqa: E501
-        :rtype: ClanCapital
-        """
-        return self._clan_capital
-
-    @clan_capital.setter
-    def clan_capital(self, clan_capital):
-        """Sets the clan_capital of this Clan.
-
-
-        :param clan_capital: The clan_capital of this Clan.  # noqa: E501
-        :type: ClanCapital
-        """
-
-        self._clan_capital = clan_capital
-
-    @property
-    def badge_urls(self):
-        """Gets the badge_urls of this Clan.  # noqa: E501
-
-
-        :return: The badge_urls of this Clan.  # noqa: E501
-        :rtype: object
-        """
-        return self._badge_urls
-
-    @badge_urls.setter
-    def badge_urls(self, badge_urls):
-        """Sets the badge_urls of this Clan.
-
-
-        :param badge_urls: The badge_urls of this Clan.  # noqa: E501
-        :type: object
-        """
-
-        self._badge_urls = badge_urls
 
     def to_dict(self):
         """Returns the model properties as a dict"""

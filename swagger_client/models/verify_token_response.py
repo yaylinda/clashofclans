@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,29 +28,50 @@ class VerifyTokenResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'status': 'str',
         'tag': 'str',
-        'token': 'str',
-        'status': 'str'
+        'token': 'str'
     }
 
     attribute_map = {
+        'status': 'status',
         'tag': 'tag',
-        'token': 'token',
-        'status': 'status'
+        'token': 'token'
     }
 
-    def __init__(self, tag=None, token=None, status=None):  # noqa: E501
+    def __init__(self, status=None, tag=None, token=None):  # noqa: E501
         """VerifyTokenResponse - a model defined in Swagger"""  # noqa: E501
+        self._status = None
         self._tag = None
         self._token = None
-        self._status = None
         self.discriminator = None
+        if status is not None:
+            self.status = status
         if tag is not None:
             self.tag = tag
         if token is not None:
             self.token = token
-        if status is not None:
-            self.status = status
+
+    @property
+    def status(self):
+        """Gets the status of this VerifyTokenResponse.  # noqa: E501
+
+
+        :return: The status of this VerifyTokenResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this VerifyTokenResponse.
+
+
+        :param status: The status of this VerifyTokenResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     @property
     def tag(self):
@@ -93,27 +114,6 @@ class VerifyTokenResponse(object):
         """
 
         self._token = token
-
-    @property
-    def status(self):
-        """Gets the status of this VerifyTokenResponse.  # noqa: E501
-
-
-        :return: The status of this VerifyTokenResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this VerifyTokenResponse.
-
-
-        :param status: The status of this VerifyTokenResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

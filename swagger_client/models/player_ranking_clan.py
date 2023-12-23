@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,50 +28,50 @@ class PlayerRankingClan(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag': 'str',
+        'badge_urls': 'object',
         'name': 'str',
-        'badge_urls': 'object'
+        'tag': 'str'
     }
 
     attribute_map = {
-        'tag': 'tag',
+        'badge_urls': 'badgeUrls',
         'name': 'name',
-        'badge_urls': 'badgeUrls'
+        'tag': 'tag'
     }
 
-    def __init__(self, tag=None, name=None, badge_urls=None):  # noqa: E501
+    def __init__(self, badge_urls=None, name=None, tag=None):  # noqa: E501
         """PlayerRankingClan - a model defined in Swagger"""  # noqa: E501
-        self._tag = None
-        self._name = None
         self._badge_urls = None
+        self._name = None
+        self._tag = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
         if badge_urls is not None:
             self.badge_urls = badge_urls
+        if name is not None:
+            self.name = name
+        if tag is not None:
+            self.tag = tag
 
     @property
-    def tag(self):
-        """Gets the tag of this PlayerRankingClan.  # noqa: E501
+    def badge_urls(self):
+        """Gets the badge_urls of this PlayerRankingClan.  # noqa: E501
 
 
-        :return: The tag of this PlayerRankingClan.  # noqa: E501
-        :rtype: str
+        :return: The badge_urls of this PlayerRankingClan.  # noqa: E501
+        :rtype: object
         """
-        return self._tag
+        return self._badge_urls
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this PlayerRankingClan.
+    @badge_urls.setter
+    def badge_urls(self, badge_urls):
+        """Sets the badge_urls of this PlayerRankingClan.
 
 
-        :param tag: The tag of this PlayerRankingClan.  # noqa: E501
-        :type: str
+        :param badge_urls: The badge_urls of this PlayerRankingClan.  # noqa: E501
+        :type: object
         """
 
-        self._tag = tag
+        self._badge_urls = badge_urls
 
     @property
     def name(self):
@@ -95,25 +95,25 @@ class PlayerRankingClan(object):
         self._name = name
 
     @property
-    def badge_urls(self):
-        """Gets the badge_urls of this PlayerRankingClan.  # noqa: E501
+    def tag(self):
+        """Gets the tag of this PlayerRankingClan.  # noqa: E501
 
 
-        :return: The badge_urls of this PlayerRankingClan.  # noqa: E501
-        :rtype: object
+        :return: The tag of this PlayerRankingClan.  # noqa: E501
+        :rtype: str
         """
-        return self._badge_urls
+        return self._tag
 
-    @badge_urls.setter
-    def badge_urls(self, badge_urls):
-        """Sets the badge_urls of this PlayerRankingClan.
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this PlayerRankingClan.
 
 
-        :param badge_urls: The badge_urls of this PlayerRankingClan.  # noqa: E501
-        :type: object
+        :param tag: The tag of this PlayerRankingClan.  # noqa: E501
+        :type: str
         """
 
-        self._badge_urls = badge_urls
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,50 +28,29 @@ class LegendLeagueTournamentSeasonResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'trophies': 'int',
         'id': 'str',
-        'rank': 'int'
+        'rank': 'int',
+        'trophies': 'int'
     }
 
     attribute_map = {
-        'trophies': 'trophies',
         'id': 'id',
-        'rank': 'rank'
+        'rank': 'rank',
+        'trophies': 'trophies'
     }
 
-    def __init__(self, trophies=None, id=None, rank=None):  # noqa: E501
+    def __init__(self, id=None, rank=None, trophies=None):  # noqa: E501
         """LegendLeagueTournamentSeasonResult - a model defined in Swagger"""  # noqa: E501
-        self._trophies = None
         self._id = None
         self._rank = None
+        self._trophies = None
         self.discriminator = None
-        if trophies is not None:
-            self.trophies = trophies
         if id is not None:
             self.id = id
         if rank is not None:
             self.rank = rank
-
-    @property
-    def trophies(self):
-        """Gets the trophies of this LegendLeagueTournamentSeasonResult.  # noqa: E501
-
-
-        :return: The trophies of this LegendLeagueTournamentSeasonResult.  # noqa: E501
-        :rtype: int
-        """
-        return self._trophies
-
-    @trophies.setter
-    def trophies(self, trophies):
-        """Sets the trophies of this LegendLeagueTournamentSeasonResult.
-
-
-        :param trophies: The trophies of this LegendLeagueTournamentSeasonResult.  # noqa: E501
-        :type: int
-        """
-
-        self._trophies = trophies
+        if trophies is not None:
+            self.trophies = trophies
 
     @property
     def id(self):
@@ -114,6 +93,27 @@ class LegendLeagueTournamentSeasonResult(object):
         """
 
         self._rank = rank
+
+    @property
+    def trophies(self):
+        """Gets the trophies of this LegendLeagueTournamentSeasonResult.  # noqa: E501
+
+
+        :return: The trophies of this LegendLeagueTournamentSeasonResult.  # noqa: E501
+        :rtype: int
+        """
+        return self._trophies
+
+    @trophies.setter
+    def trophies(self, trophies):
+        """Sets the trophies of this LegendLeagueTournamentSeasonResult.
+
+
+        :param trophies: The trophies of this LegendLeagueTournamentSeasonResult.  # noqa: E501
+        :type: int
+        """
+
+        self._trophies = trophies
 
     def to_dict(self):
         """Returns the model properties as a dict"""

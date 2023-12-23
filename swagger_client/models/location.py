@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,60 +28,60 @@ class Location(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'localized_name': 'str',
+        'country_code': 'str',
         'id': 'int',
-        'name': 'str',
         'is_country': 'bool',
-        'country_code': 'str'
+        'localized_name': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'localized_name': 'localizedName',
+        'country_code': 'countryCode',
         'id': 'id',
-        'name': 'name',
         'is_country': 'isCountry',
-        'country_code': 'countryCode'
+        'localized_name': 'localizedName',
+        'name': 'name'
     }
 
-    def __init__(self, localized_name=None, id=None, name=None, is_country=None, country_code=None):  # noqa: E501
+    def __init__(self, country_code=None, id=None, is_country=None, localized_name=None, name=None):  # noqa: E501
         """Location - a model defined in Swagger"""  # noqa: E501
-        self._localized_name = None
-        self._id = None
-        self._name = None
-        self._is_country = None
         self._country_code = None
+        self._id = None
+        self._is_country = None
+        self._localized_name = None
+        self._name = None
         self.discriminator = None
-        if localized_name is not None:
-            self.localized_name = localized_name
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if is_country is not None:
-            self.is_country = is_country
         if country_code is not None:
             self.country_code = country_code
+        if id is not None:
+            self.id = id
+        if is_country is not None:
+            self.is_country = is_country
+        if localized_name is not None:
+            self.localized_name = localized_name
+        if name is not None:
+            self.name = name
 
     @property
-    def localized_name(self):
-        """Gets the localized_name of this Location.  # noqa: E501
+    def country_code(self):
+        """Gets the country_code of this Location.  # noqa: E501
 
 
-        :return: The localized_name of this Location.  # noqa: E501
+        :return: The country_code of this Location.  # noqa: E501
         :rtype: str
         """
-        return self._localized_name
+        return self._country_code
 
-    @localized_name.setter
-    def localized_name(self, localized_name):
-        """Sets the localized_name of this Location.
+    @country_code.setter
+    def country_code(self, country_code):
+        """Sets the country_code of this Location.
 
 
-        :param localized_name: The localized_name of this Location.  # noqa: E501
+        :param country_code: The country_code of this Location.  # noqa: E501
         :type: str
         """
 
-        self._localized_name = localized_name
+        self._country_code = country_code
 
     @property
     def id(self):
@@ -105,27 +105,6 @@ class Location(object):
         self._id = id
 
     @property
-    def name(self):
-        """Gets the name of this Location.  # noqa: E501
-
-
-        :return: The name of this Location.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Location.
-
-
-        :param name: The name of this Location.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
     def is_country(self):
         """Gets the is_country of this Location.  # noqa: E501
 
@@ -147,25 +126,46 @@ class Location(object):
         self._is_country = is_country
 
     @property
-    def country_code(self):
-        """Gets the country_code of this Location.  # noqa: E501
+    def localized_name(self):
+        """Gets the localized_name of this Location.  # noqa: E501
 
 
-        :return: The country_code of this Location.  # noqa: E501
+        :return: The localized_name of this Location.  # noqa: E501
         :rtype: str
         """
-        return self._country_code
+        return self._localized_name
 
-    @country_code.setter
-    def country_code(self, country_code):
-        """Sets the country_code of this Location.
+    @localized_name.setter
+    def localized_name(self, localized_name):
+        """Sets the localized_name of this Location.
 
 
-        :param country_code: The country_code of this Location.  # noqa: E501
+        :param localized_name: The localized_name of this Location.  # noqa: E501
         :type: str
         """
 
-        self._country_code = country_code
+        self._localized_name = localized_name
+
+    @property
+    def name(self):
+        """Gets the name of this Location.  # noqa: E501
+
+
+        :return: The name of this Location.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Location.
+
+
+        :param name: The name of this Location.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

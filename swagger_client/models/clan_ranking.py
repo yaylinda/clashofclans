@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,41 +28,43 @@ class ClanRanking(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'badge_urls': 'object',
         'clan_level': 'int',
         'clan_points': 'int',
         'location': 'Location',
         'members': 'int',
-        'tag': 'str',
         'name': 'str',
-        'rank': 'int',
         'previous_rank': 'int',
-        'badge_urls': 'object'
+        'rank': 'int',
+        'tag': 'str'
     }
 
     attribute_map = {
+        'badge_urls': 'badgeUrls',
         'clan_level': 'clanLevel',
         'clan_points': 'clanPoints',
         'location': 'location',
         'members': 'members',
-        'tag': 'tag',
         'name': 'name',
-        'rank': 'rank',
         'previous_rank': 'previousRank',
-        'badge_urls': 'badgeUrls'
+        'rank': 'rank',
+        'tag': 'tag'
     }
 
-    def __init__(self, clan_level=None, clan_points=None, location=None, members=None, tag=None, name=None, rank=None, previous_rank=None, badge_urls=None):  # noqa: E501
+    def __init__(self, badge_urls=None, clan_level=None, clan_points=None, location=None, members=None, name=None, previous_rank=None, rank=None, tag=None):  # noqa: E501
         """ClanRanking - a model defined in Swagger"""  # noqa: E501
+        self._badge_urls = None
         self._clan_level = None
         self._clan_points = None
         self._location = None
         self._members = None
-        self._tag = None
         self._name = None
-        self._rank = None
         self._previous_rank = None
-        self._badge_urls = None
+        self._rank = None
+        self._tag = None
         self.discriminator = None
+        if badge_urls is not None:
+            self.badge_urls = badge_urls
         if clan_level is not None:
             self.clan_level = clan_level
         if clan_points is not None:
@@ -71,16 +73,35 @@ class ClanRanking(object):
             self.location = location
         if members is not None:
             self.members = members
-        if tag is not None:
-            self.tag = tag
         if name is not None:
             self.name = name
-        if rank is not None:
-            self.rank = rank
         if previous_rank is not None:
             self.previous_rank = previous_rank
-        if badge_urls is not None:
-            self.badge_urls = badge_urls
+        if rank is not None:
+            self.rank = rank
+        if tag is not None:
+            self.tag = tag
+
+    @property
+    def badge_urls(self):
+        """Gets the badge_urls of this ClanRanking.  # noqa: E501
+
+
+        :return: The badge_urls of this ClanRanking.  # noqa: E501
+        :rtype: object
+        """
+        return self._badge_urls
+
+    @badge_urls.setter
+    def badge_urls(self, badge_urls):
+        """Sets the badge_urls of this ClanRanking.
+
+
+        :param badge_urls: The badge_urls of this ClanRanking.  # noqa: E501
+        :type: object
+        """
+
+        self._badge_urls = badge_urls
 
     @property
     def clan_level(self):
@@ -167,27 +188,6 @@ class ClanRanking(object):
         self._members = members
 
     @property
-    def tag(self):
-        """Gets the tag of this ClanRanking.  # noqa: E501
-
-
-        :return: The tag of this ClanRanking.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanRanking.
-
-
-        :param tag: The tag of this ClanRanking.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
     def name(self):
         """Gets the name of this ClanRanking.  # noqa: E501
 
@@ -207,27 +207,6 @@ class ClanRanking(object):
         """
 
         self._name = name
-
-    @property
-    def rank(self):
-        """Gets the rank of this ClanRanking.  # noqa: E501
-
-
-        :return: The rank of this ClanRanking.  # noqa: E501
-        :rtype: int
-        """
-        return self._rank
-
-    @rank.setter
-    def rank(self, rank):
-        """Sets the rank of this ClanRanking.
-
-
-        :param rank: The rank of this ClanRanking.  # noqa: E501
-        :type: int
-        """
-
-        self._rank = rank
 
     @property
     def previous_rank(self):
@@ -251,25 +230,46 @@ class ClanRanking(object):
         self._previous_rank = previous_rank
 
     @property
-    def badge_urls(self):
-        """Gets the badge_urls of this ClanRanking.  # noqa: E501
+    def rank(self):
+        """Gets the rank of this ClanRanking.  # noqa: E501
 
 
-        :return: The badge_urls of this ClanRanking.  # noqa: E501
-        :rtype: object
+        :return: The rank of this ClanRanking.  # noqa: E501
+        :rtype: int
         """
-        return self._badge_urls
+        return self._rank
 
-    @badge_urls.setter
-    def badge_urls(self, badge_urls):
-        """Sets the badge_urls of this ClanRanking.
+    @rank.setter
+    def rank(self, rank):
+        """Sets the rank of this ClanRanking.
 
 
-        :param badge_urls: The badge_urls of this ClanRanking.  # noqa: E501
-        :type: object
+        :param rank: The rank of this ClanRanking.  # noqa: E501
+        :type: int
         """
 
-        self._badge_urls = badge_urls
+        self._rank = rank
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanRanking.  # noqa: E501
+
+
+        :return: The tag of this ClanRanking.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanRanking.
+
+
+        :param tag: The tag of this ClanRanking.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,45 +28,24 @@ class ClanCapitalRaidSeasonAttacker(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag': 'str',
-        'name': 'str'
+        'name': 'str',
+        'tag': 'str'
     }
 
     attribute_map = {
-        'tag': 'tag',
-        'name': 'name'
+        'name': 'name',
+        'tag': 'tag'
     }
 
-    def __init__(self, tag=None, name=None):  # noqa: E501
+    def __init__(self, name=None, tag=None):  # noqa: E501
         """ClanCapitalRaidSeasonAttacker - a model defined in Swagger"""  # noqa: E501
-        self._tag = None
         self._name = None
+        self._tag = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
         if name is not None:
             self.name = name
-
-    @property
-    def tag(self):
-        """Gets the tag of this ClanCapitalRaidSeasonAttacker.  # noqa: E501
-
-
-        :return: The tag of this ClanCapitalRaidSeasonAttacker.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanCapitalRaidSeasonAttacker.
-
-
-        :param tag: The tag of this ClanCapitalRaidSeasonAttacker.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
+        if tag is not None:
+            self.tag = tag
 
     @property
     def name(self):
@@ -88,6 +67,27 @@ class ClanCapitalRaidSeasonAttacker(object):
         """
 
         self._name = name
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanCapitalRaidSeasonAttacker.  # noqa: E501
+
+
+        :return: The tag of this ClanCapitalRaidSeasonAttacker.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanCapitalRaidSeasonAttacker.
+
+
+        :param tag: The tag of this ClanCapitalRaidSeasonAttacker.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

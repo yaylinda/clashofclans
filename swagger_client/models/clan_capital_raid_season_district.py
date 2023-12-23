@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,138 +28,54 @@ class ClanCapitalRaidSeasonDistrict(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'stars': 'int',
-        'name': 'JsonLocalizedName',
-        'id': 'int',
-        'destruction_percent': 'int',
         'attack_count': 'int',
-        'total_looted': 'int',
         'attacks': 'ClanCapitalRaidSeasonAttackList',
-        'district_hall_level': 'int'
+        'destruction_percent': 'int',
+        'district_hall_level': 'int',
+        'id': 'int',
+        'name': 'JsonLocalizedName',
+        'stars': 'int',
+        'total_looted': 'int'
     }
 
     attribute_map = {
-        'stars': 'stars',
-        'name': 'name',
-        'id': 'id',
-        'destruction_percent': 'destructionPercent',
         'attack_count': 'attackCount',
-        'total_looted': 'totalLooted',
         'attacks': 'attacks',
-        'district_hall_level': 'districtHallLevel'
+        'destruction_percent': 'destructionPercent',
+        'district_hall_level': 'districtHallLevel',
+        'id': 'id',
+        'name': 'name',
+        'stars': 'stars',
+        'total_looted': 'totalLooted'
     }
 
-    def __init__(self, stars=None, name=None, id=None, destruction_percent=None, attack_count=None, total_looted=None, attacks=None, district_hall_level=None):  # noqa: E501
+    def __init__(self, attack_count=None, attacks=None, destruction_percent=None, district_hall_level=None, id=None, name=None, stars=None, total_looted=None):  # noqa: E501
         """ClanCapitalRaidSeasonDistrict - a model defined in Swagger"""  # noqa: E501
-        self._stars = None
-        self._name = None
-        self._id = None
-        self._destruction_percent = None
         self._attack_count = None
-        self._total_looted = None
         self._attacks = None
+        self._destruction_percent = None
         self._district_hall_level = None
+        self._id = None
+        self._name = None
+        self._stars = None
+        self._total_looted = None
         self.discriminator = None
-        if stars is not None:
-            self.stars = stars
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
-        if destruction_percent is not None:
-            self.destruction_percent = destruction_percent
         if attack_count is not None:
             self.attack_count = attack_count
-        if total_looted is not None:
-            self.total_looted = total_looted
         if attacks is not None:
             self.attacks = attacks
+        if destruction_percent is not None:
+            self.destruction_percent = destruction_percent
         if district_hall_level is not None:
             self.district_hall_level = district_hall_level
-
-    @property
-    def stars(self):
-        """Gets the stars of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-
-
-        :return: The stars of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :rtype: int
-        """
-        return self._stars
-
-    @stars.setter
-    def stars(self, stars):
-        """Sets the stars of this ClanCapitalRaidSeasonDistrict.
-
-
-        :param stars: The stars of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :type: int
-        """
-
-        self._stars = stars
-
-    @property
-    def name(self):
-        """Gets the name of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-
-
-        :return: The name of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :rtype: JsonLocalizedName
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanCapitalRaidSeasonDistrict.
-
-
-        :param name: The name of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :type: JsonLocalizedName
-        """
-
-        self._name = name
-
-    @property
-    def id(self):
-        """Gets the id of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-
-
-        :return: The id of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ClanCapitalRaidSeasonDistrict.
-
-
-        :param id: The id of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def destruction_percent(self):
-        """Gets the destruction_percent of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-
-
-        :return: The destruction_percent of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :rtype: int
-        """
-        return self._destruction_percent
-
-    @destruction_percent.setter
-    def destruction_percent(self, destruction_percent):
-        """Sets the destruction_percent of this ClanCapitalRaidSeasonDistrict.
-
-
-        :param destruction_percent: The destruction_percent of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :type: int
-        """
-
-        self._destruction_percent = destruction_percent
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if stars is not None:
+            self.stars = stars
+        if total_looted is not None:
+            self.total_looted = total_looted
 
     @property
     def attack_count(self):
@@ -183,27 +99,6 @@ class ClanCapitalRaidSeasonDistrict(object):
         self._attack_count = attack_count
 
     @property
-    def total_looted(self):
-        """Gets the total_looted of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-
-
-        :return: The total_looted of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :rtype: int
-        """
-        return self._total_looted
-
-    @total_looted.setter
-    def total_looted(self, total_looted):
-        """Sets the total_looted of this ClanCapitalRaidSeasonDistrict.
-
-
-        :param total_looted: The total_looted of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
-        :type: int
-        """
-
-        self._total_looted = total_looted
-
-    @property
     def attacks(self):
         """Gets the attacks of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
 
@@ -225,6 +120,27 @@ class ClanCapitalRaidSeasonDistrict(object):
         self._attacks = attacks
 
     @property
+    def destruction_percent(self):
+        """Gets the destruction_percent of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+
+
+        :return: The destruction_percent of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :rtype: int
+        """
+        return self._destruction_percent
+
+    @destruction_percent.setter
+    def destruction_percent(self, destruction_percent):
+        """Sets the destruction_percent of this ClanCapitalRaidSeasonDistrict.
+
+
+        :param destruction_percent: The destruction_percent of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :type: int
+        """
+
+        self._destruction_percent = destruction_percent
+
+    @property
     def district_hall_level(self):
         """Gets the district_hall_level of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
 
@@ -244,6 +160,90 @@ class ClanCapitalRaidSeasonDistrict(object):
         """
 
         self._district_hall_level = district_hall_level
+
+    @property
+    def id(self):
+        """Gets the id of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+
+
+        :return: The id of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ClanCapitalRaidSeasonDistrict.
+
+
+        :param id: The id of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+
+
+        :return: The name of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :rtype: JsonLocalizedName
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanCapitalRaidSeasonDistrict.
+
+
+        :param name: The name of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :type: JsonLocalizedName
+        """
+
+        self._name = name
+
+    @property
+    def stars(self):
+        """Gets the stars of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+
+
+        :return: The stars of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :rtype: int
+        """
+        return self._stars
+
+    @stars.setter
+    def stars(self, stars):
+        """Sets the stars of this ClanCapitalRaidSeasonDistrict.
+
+
+        :param stars: The stars of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :type: int
+        """
+
+        self._stars = stars
+
+    @property
+    def total_looted(self):
+        """Gets the total_looted of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+
+
+        :return: The total_looted of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_looted
+
+    @total_looted.setter
+    def total_looted(self, total_looted):
+        """Sets the total_looted of this ClanCapitalRaidSeasonDistrict.
+
+
+        :param total_looted: The total_looted of this ClanCapitalRaidSeasonDistrict.  # noqa: E501
+        :type: int
+        """
+
+        self._total_looted = total_looted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

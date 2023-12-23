@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,107 +28,44 @@ class ClanCapitalRaidSeasonMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag': 'str',
-        'name': 'str',
-        'attacks': 'int',
         'attack_limit': 'int',
+        'attacks': 'int',
         'bonus_attack_limit': 'int',
-        'capital_resources_looted': 'int'
+        'capital_resources_looted': 'int',
+        'name': 'str',
+        'tag': 'str'
     }
 
     attribute_map = {
-        'tag': 'tag',
-        'name': 'name',
-        'attacks': 'attacks',
         'attack_limit': 'attackLimit',
+        'attacks': 'attacks',
         'bonus_attack_limit': 'bonusAttackLimit',
-        'capital_resources_looted': 'capitalResourcesLooted'
+        'capital_resources_looted': 'capitalResourcesLooted',
+        'name': 'name',
+        'tag': 'tag'
     }
 
-    def __init__(self, tag=None, name=None, attacks=None, attack_limit=None, bonus_attack_limit=None, capital_resources_looted=None):  # noqa: E501
+    def __init__(self, attack_limit=None, attacks=None, bonus_attack_limit=None, capital_resources_looted=None, name=None, tag=None):  # noqa: E501
         """ClanCapitalRaidSeasonMember - a model defined in Swagger"""  # noqa: E501
-        self._tag = None
-        self._name = None
-        self._attacks = None
         self._attack_limit = None
+        self._attacks = None
         self._bonus_attack_limit = None
         self._capital_resources_looted = None
+        self._name = None
+        self._tag = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
-        if attacks is not None:
-            self.attacks = attacks
         if attack_limit is not None:
             self.attack_limit = attack_limit
+        if attacks is not None:
+            self.attacks = attacks
         if bonus_attack_limit is not None:
             self.bonus_attack_limit = bonus_attack_limit
         if capital_resources_looted is not None:
             self.capital_resources_looted = capital_resources_looted
-
-    @property
-    def tag(self):
-        """Gets the tag of this ClanCapitalRaidSeasonMember.  # noqa: E501
-
-
-        :return: The tag of this ClanCapitalRaidSeasonMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanCapitalRaidSeasonMember.
-
-
-        :param tag: The tag of this ClanCapitalRaidSeasonMember.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this ClanCapitalRaidSeasonMember.  # noqa: E501
-
-
-        :return: The name of this ClanCapitalRaidSeasonMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanCapitalRaidSeasonMember.
-
-
-        :param name: The name of this ClanCapitalRaidSeasonMember.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def attacks(self):
-        """Gets the attacks of this ClanCapitalRaidSeasonMember.  # noqa: E501
-
-
-        :return: The attacks of this ClanCapitalRaidSeasonMember.  # noqa: E501
-        :rtype: int
-        """
-        return self._attacks
-
-    @attacks.setter
-    def attacks(self, attacks):
-        """Sets the attacks of this ClanCapitalRaidSeasonMember.
-
-
-        :param attacks: The attacks of this ClanCapitalRaidSeasonMember.  # noqa: E501
-        :type: int
-        """
-
-        self._attacks = attacks
+        if name is not None:
+            self.name = name
+        if tag is not None:
+            self.tag = tag
 
     @property
     def attack_limit(self):
@@ -150,6 +87,27 @@ class ClanCapitalRaidSeasonMember(object):
         """
 
         self._attack_limit = attack_limit
+
+    @property
+    def attacks(self):
+        """Gets the attacks of this ClanCapitalRaidSeasonMember.  # noqa: E501
+
+
+        :return: The attacks of this ClanCapitalRaidSeasonMember.  # noqa: E501
+        :rtype: int
+        """
+        return self._attacks
+
+    @attacks.setter
+    def attacks(self, attacks):
+        """Sets the attacks of this ClanCapitalRaidSeasonMember.
+
+
+        :param attacks: The attacks of this ClanCapitalRaidSeasonMember.  # noqa: E501
+        :type: int
+        """
+
+        self._attacks = attacks
 
     @property
     def bonus_attack_limit(self):
@@ -192,6 +150,48 @@ class ClanCapitalRaidSeasonMember(object):
         """
 
         self._capital_resources_looted = capital_resources_looted
+
+    @property
+    def name(self):
+        """Gets the name of this ClanCapitalRaidSeasonMember.  # noqa: E501
+
+
+        :return: The name of this ClanCapitalRaidSeasonMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanCapitalRaidSeasonMember.
+
+
+        :param name: The name of this ClanCapitalRaidSeasonMember.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanCapitalRaidSeasonMember.  # noqa: E501
+
+
+        :return: The tag of this ClanCapitalRaidSeasonMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanCapitalRaidSeasonMember.
+
+
+        :param tag: The tag of this ClanCapitalRaidSeasonMember.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

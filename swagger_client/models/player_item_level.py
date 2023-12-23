@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,44 +28,65 @@ class PlayerItemLevel(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'equipment': 'PlayerItemLevelList',
         'level': 'int',
-        'name': 'JsonLocalizedName',
         'max_level': 'int',
-        'village': 'str',
+        'name': 'JsonLocalizedName',
         'super_troop_is_active': 'bool',
-        'equipment': 'PlayerItemLevelList'
+        'village': 'str'
     }
 
     attribute_map = {
+        'equipment': 'equipment',
         'level': 'level',
-        'name': 'name',
         'max_level': 'maxLevel',
-        'village': 'village',
+        'name': 'name',
         'super_troop_is_active': 'superTroopIsActive',
-        'equipment': 'equipment'
+        'village': 'village'
     }
 
-    def __init__(self, level=None, name=None, max_level=None, village=None, super_troop_is_active=None, equipment=None):  # noqa: E501
+    def __init__(self, equipment=None, level=None, max_level=None, name=None, super_troop_is_active=None, village=None):  # noqa: E501
         """PlayerItemLevel - a model defined in Swagger"""  # noqa: E501
-        self._level = None
-        self._name = None
-        self._max_level = None
-        self._village = None
-        self._super_troop_is_active = None
         self._equipment = None
+        self._level = None
+        self._max_level = None
+        self._name = None
+        self._super_troop_is_active = None
+        self._village = None
         self.discriminator = None
-        if level is not None:
-            self.level = level
-        if name is not None:
-            self.name = name
-        if max_level is not None:
-            self.max_level = max_level
-        if village is not None:
-            self.village = village
-        if super_troop_is_active is not None:
-            self.super_troop_is_active = super_troop_is_active
         if equipment is not None:
             self.equipment = equipment
+        if level is not None:
+            self.level = level
+        if max_level is not None:
+            self.max_level = max_level
+        if name is not None:
+            self.name = name
+        if super_troop_is_active is not None:
+            self.super_troop_is_active = super_troop_is_active
+        if village is not None:
+            self.village = village
+
+    @property
+    def equipment(self):
+        """Gets the equipment of this PlayerItemLevel.  # noqa: E501
+
+
+        :return: The equipment of this PlayerItemLevel.  # noqa: E501
+        :rtype: PlayerItemLevelList
+        """
+        return self._equipment
+
+    @equipment.setter
+    def equipment(self, equipment):
+        """Sets the equipment of this PlayerItemLevel.
+
+
+        :param equipment: The equipment of this PlayerItemLevel.  # noqa: E501
+        :type: PlayerItemLevelList
+        """
+
+        self._equipment = equipment
 
     @property
     def level(self):
@@ -89,27 +110,6 @@ class PlayerItemLevel(object):
         self._level = level
 
     @property
-    def name(self):
-        """Gets the name of this PlayerItemLevel.  # noqa: E501
-
-
-        :return: The name of this PlayerItemLevel.  # noqa: E501
-        :rtype: JsonLocalizedName
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PlayerItemLevel.
-
-
-        :param name: The name of this PlayerItemLevel.  # noqa: E501
-        :type: JsonLocalizedName
-        """
-
-        self._name = name
-
-    @property
     def max_level(self):
         """Gets the max_level of this PlayerItemLevel.  # noqa: E501
 
@@ -131,31 +131,25 @@ class PlayerItemLevel(object):
         self._max_level = max_level
 
     @property
-    def village(self):
-        """Gets the village of this PlayerItemLevel.  # noqa: E501
+    def name(self):
+        """Gets the name of this PlayerItemLevel.  # noqa: E501
 
 
-        :return: The village of this PlayerItemLevel.  # noqa: E501
-        :rtype: str
+        :return: The name of this PlayerItemLevel.  # noqa: E501
+        :rtype: JsonLocalizedName
         """
-        return self._village
+        return self._name
 
-    @village.setter
-    def village(self, village):
-        """Sets the village of this PlayerItemLevel.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PlayerItemLevel.
 
 
-        :param village: The village of this PlayerItemLevel.  # noqa: E501
-        :type: str
+        :param name: The name of this PlayerItemLevel.  # noqa: E501
+        :type: JsonLocalizedName
         """
-        allowed_values = ["HOME_VILLAGE", "BUILDER_BASE", "CLAN_CAPITAL"]  # noqa: E501
-        if village not in allowed_values:
-            raise ValueError(
-                "Invalid value for `village` ({0}), must be one of {1}"  # noqa: E501
-                .format(village, allowed_values)
-            )
 
-        self._village = village
+        self._name = name
 
     @property
     def super_troop_is_active(self):
@@ -179,25 +173,31 @@ class PlayerItemLevel(object):
         self._super_troop_is_active = super_troop_is_active
 
     @property
-    def equipment(self):
-        """Gets the equipment of this PlayerItemLevel.  # noqa: E501
+    def village(self):
+        """Gets the village of this PlayerItemLevel.  # noqa: E501
 
 
-        :return: The equipment of this PlayerItemLevel.  # noqa: E501
-        :rtype: PlayerItemLevelList
+        :return: The village of this PlayerItemLevel.  # noqa: E501
+        :rtype: str
         """
-        return self._equipment
+        return self._village
 
-    @equipment.setter
-    def equipment(self, equipment):
-        """Sets the equipment of this PlayerItemLevel.
+    @village.setter
+    def village(self, village):
+        """Sets the village of this PlayerItemLevel.
 
 
-        :param equipment: The equipment of this PlayerItemLevel.  # noqa: E501
-        :type: PlayerItemLevelList
+        :param village: The village of this PlayerItemLevel.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["homeVillage", "builderBase", "clanCapital"]  # noqa: E501
+        if village not in allowed_values:
+            raise ValueError(
+                "Invalid value for `village` ({0}), must be one of {1}"  # noqa: E501
+                .format(village, allowed_values)
+            )
 
-        self._equipment = equipment
+        self._village = village
 
     def to_dict(self):
         """Returns the model properties as a dict"""

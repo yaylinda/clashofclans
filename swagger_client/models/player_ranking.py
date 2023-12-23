@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,106 +28,64 @@ class PlayerRanking(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'league': 'League',
-        'clan': 'PlayerRankingClan',
         'attack_wins': 'int',
+        'clan': 'PlayerRankingClan',
         'defense_wins': 'int',
-        'tag': 'str',
-        'name': 'str',
         'exp_level': 'int',
-        'rank': 'int',
+        'league': 'League',
+        'name': 'str',
         'previous_rank': 'int',
+        'rank': 'int',
+        'tag': 'str',
         'trophies': 'int'
     }
 
     attribute_map = {
-        'league': 'league',
-        'clan': 'clan',
         'attack_wins': 'attackWins',
+        'clan': 'clan',
         'defense_wins': 'defenseWins',
-        'tag': 'tag',
-        'name': 'name',
         'exp_level': 'expLevel',
-        'rank': 'rank',
+        'league': 'league',
+        'name': 'name',
         'previous_rank': 'previousRank',
+        'rank': 'rank',
+        'tag': 'tag',
         'trophies': 'trophies'
     }
 
-    def __init__(self, league=None, clan=None, attack_wins=None, defense_wins=None, tag=None, name=None, exp_level=None, rank=None, previous_rank=None, trophies=None):  # noqa: E501
+    def __init__(self, attack_wins=None, clan=None, defense_wins=None, exp_level=None, league=None, name=None, previous_rank=None, rank=None, tag=None, trophies=None):  # noqa: E501
         """PlayerRanking - a model defined in Swagger"""  # noqa: E501
-        self._league = None
-        self._clan = None
         self._attack_wins = None
+        self._clan = None
         self._defense_wins = None
-        self._tag = None
-        self._name = None
         self._exp_level = None
-        self._rank = None
+        self._league = None
+        self._name = None
         self._previous_rank = None
+        self._rank = None
+        self._tag = None
         self._trophies = None
         self.discriminator = None
-        if league is not None:
-            self.league = league
-        if clan is not None:
-            self.clan = clan
         if attack_wins is not None:
             self.attack_wins = attack_wins
+        if clan is not None:
+            self.clan = clan
         if defense_wins is not None:
             self.defense_wins = defense_wins
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
         if exp_level is not None:
             self.exp_level = exp_level
-        if rank is not None:
-            self.rank = rank
+        if league is not None:
+            self.league = league
+        if name is not None:
+            self.name = name
         if previous_rank is not None:
             self.previous_rank = previous_rank
+        if rank is not None:
+            self.rank = rank
+        if tag is not None:
+            self.tag = tag
         if trophies is not None:
             self.trophies = trophies
-
-    @property
-    def league(self):
-        """Gets the league of this PlayerRanking.  # noqa: E501
-
-
-        :return: The league of this PlayerRanking.  # noqa: E501
-        :rtype: League
-        """
-        return self._league
-
-    @league.setter
-    def league(self, league):
-        """Sets the league of this PlayerRanking.
-
-
-        :param league: The league of this PlayerRanking.  # noqa: E501
-        :type: League
-        """
-
-        self._league = league
-
-    @property
-    def clan(self):
-        """Gets the clan of this PlayerRanking.  # noqa: E501
-
-
-        :return: The clan of this PlayerRanking.  # noqa: E501
-        :rtype: PlayerRankingClan
-        """
-        return self._clan
-
-    @clan.setter
-    def clan(self, clan):
-        """Sets the clan of this PlayerRanking.
-
-
-        :param clan: The clan of this PlayerRanking.  # noqa: E501
-        :type: PlayerRankingClan
-        """
-
-        self._clan = clan
 
     @property
     def attack_wins(self):
@@ -151,6 +109,27 @@ class PlayerRanking(object):
         self._attack_wins = attack_wins
 
     @property
+    def clan(self):
+        """Gets the clan of this PlayerRanking.  # noqa: E501
+
+
+        :return: The clan of this PlayerRanking.  # noqa: E501
+        :rtype: PlayerRankingClan
+        """
+        return self._clan
+
+    @clan.setter
+    def clan(self, clan):
+        """Sets the clan of this PlayerRanking.
+
+
+        :param clan: The clan of this PlayerRanking.  # noqa: E501
+        :type: PlayerRankingClan
+        """
+
+        self._clan = clan
+
+    @property
     def defense_wins(self):
         """Gets the defense_wins of this PlayerRanking.  # noqa: E501
 
@@ -170,48 +149,6 @@ class PlayerRanking(object):
         """
 
         self._defense_wins = defense_wins
-
-    @property
-    def tag(self):
-        """Gets the tag of this PlayerRanking.  # noqa: E501
-
-
-        :return: The tag of this PlayerRanking.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this PlayerRanking.
-
-
-        :param tag: The tag of this PlayerRanking.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this PlayerRanking.  # noqa: E501
-
-
-        :return: The name of this PlayerRanking.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PlayerRanking.
-
-
-        :param name: The name of this PlayerRanking.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def exp_level(self):
@@ -235,25 +172,46 @@ class PlayerRanking(object):
         self._exp_level = exp_level
 
     @property
-    def rank(self):
-        """Gets the rank of this PlayerRanking.  # noqa: E501
+    def league(self):
+        """Gets the league of this PlayerRanking.  # noqa: E501
 
 
-        :return: The rank of this PlayerRanking.  # noqa: E501
-        :rtype: int
+        :return: The league of this PlayerRanking.  # noqa: E501
+        :rtype: League
         """
-        return self._rank
+        return self._league
 
-    @rank.setter
-    def rank(self, rank):
-        """Sets the rank of this PlayerRanking.
+    @league.setter
+    def league(self, league):
+        """Sets the league of this PlayerRanking.
 
 
-        :param rank: The rank of this PlayerRanking.  # noqa: E501
-        :type: int
+        :param league: The league of this PlayerRanking.  # noqa: E501
+        :type: League
         """
 
-        self._rank = rank
+        self._league = league
+
+    @property
+    def name(self):
+        """Gets the name of this PlayerRanking.  # noqa: E501
+
+
+        :return: The name of this PlayerRanking.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PlayerRanking.
+
+
+        :param name: The name of this PlayerRanking.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def previous_rank(self):
@@ -275,6 +233,48 @@ class PlayerRanking(object):
         """
 
         self._previous_rank = previous_rank
+
+    @property
+    def rank(self):
+        """Gets the rank of this PlayerRanking.  # noqa: E501
+
+
+        :return: The rank of this PlayerRanking.  # noqa: E501
+        :rtype: int
+        """
+        return self._rank
+
+    @rank.setter
+    def rank(self, rank):
+        """Sets the rank of this PlayerRanking.
+
+
+        :param rank: The rank of this PlayerRanking.  # noqa: E501
+        :type: int
+        """
+
+        self._rank = rank
+
+    @property
+    def tag(self):
+        """Gets the tag of this PlayerRanking.  # noqa: E501
+
+
+        :return: The tag of this PlayerRanking.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this PlayerRanking.
+
+
+        :param tag: The tag of this PlayerRanking.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     @property
     def trophies(self):

@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -29,53 +29,53 @@ class PlayerBuilderBaseRanking(object):
     """
     swagger_types = {
         'builder_base_league': 'BuilderBaseLeague',
+        'builder_base_trophies': 'int',
         'clan': 'PlayerRankingClan',
-        'tag': 'str',
-        'name': 'str',
         'exp_level': 'int',
-        'rank': 'int',
+        'name': 'str',
         'previous_rank': 'int',
-        'builder_base_trophies': 'int'
+        'rank': 'int',
+        'tag': 'str'
     }
 
     attribute_map = {
         'builder_base_league': 'builderBaseLeague',
+        'builder_base_trophies': 'builderBaseTrophies',
         'clan': 'clan',
-        'tag': 'tag',
-        'name': 'name',
         'exp_level': 'expLevel',
-        'rank': 'rank',
+        'name': 'name',
         'previous_rank': 'previousRank',
-        'builder_base_trophies': 'builderBaseTrophies'
+        'rank': 'rank',
+        'tag': 'tag'
     }
 
-    def __init__(self, builder_base_league=None, clan=None, tag=None, name=None, exp_level=None, rank=None, previous_rank=None, builder_base_trophies=None):  # noqa: E501
+    def __init__(self, builder_base_league=None, builder_base_trophies=None, clan=None, exp_level=None, name=None, previous_rank=None, rank=None, tag=None):  # noqa: E501
         """PlayerBuilderBaseRanking - a model defined in Swagger"""  # noqa: E501
         self._builder_base_league = None
-        self._clan = None
-        self._tag = None
-        self._name = None
-        self._exp_level = None
-        self._rank = None
-        self._previous_rank = None
         self._builder_base_trophies = None
+        self._clan = None
+        self._exp_level = None
+        self._name = None
+        self._previous_rank = None
+        self._rank = None
+        self._tag = None
         self.discriminator = None
         if builder_base_league is not None:
             self.builder_base_league = builder_base_league
-        if clan is not None:
-            self.clan = clan
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
-        if exp_level is not None:
-            self.exp_level = exp_level
-        if rank is not None:
-            self.rank = rank
-        if previous_rank is not None:
-            self.previous_rank = previous_rank
         if builder_base_trophies is not None:
             self.builder_base_trophies = builder_base_trophies
+        if clan is not None:
+            self.clan = clan
+        if exp_level is not None:
+            self.exp_level = exp_level
+        if name is not None:
+            self.name = name
+        if previous_rank is not None:
+            self.previous_rank = previous_rank
+        if rank is not None:
+            self.rank = rank
+        if tag is not None:
+            self.tag = tag
 
     @property
     def builder_base_league(self):
@@ -99,6 +99,27 @@ class PlayerBuilderBaseRanking(object):
         self._builder_base_league = builder_base_league
 
     @property
+    def builder_base_trophies(self):
+        """Gets the builder_base_trophies of this PlayerBuilderBaseRanking.  # noqa: E501
+
+
+        :return: The builder_base_trophies of this PlayerBuilderBaseRanking.  # noqa: E501
+        :rtype: int
+        """
+        return self._builder_base_trophies
+
+    @builder_base_trophies.setter
+    def builder_base_trophies(self, builder_base_trophies):
+        """Sets the builder_base_trophies of this PlayerBuilderBaseRanking.
+
+
+        :param builder_base_trophies: The builder_base_trophies of this PlayerBuilderBaseRanking.  # noqa: E501
+        :type: int
+        """
+
+        self._builder_base_trophies = builder_base_trophies
+
+    @property
     def clan(self):
         """Gets the clan of this PlayerBuilderBaseRanking.  # noqa: E501
 
@@ -118,48 +139,6 @@ class PlayerBuilderBaseRanking(object):
         """
 
         self._clan = clan
-
-    @property
-    def tag(self):
-        """Gets the tag of this PlayerBuilderBaseRanking.  # noqa: E501
-
-
-        :return: The tag of this PlayerBuilderBaseRanking.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this PlayerBuilderBaseRanking.
-
-
-        :param tag: The tag of this PlayerBuilderBaseRanking.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this PlayerBuilderBaseRanking.  # noqa: E501
-
-
-        :return: The name of this PlayerBuilderBaseRanking.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PlayerBuilderBaseRanking.
-
-
-        :param name: The name of this PlayerBuilderBaseRanking.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def exp_level(self):
@@ -183,25 +162,25 @@ class PlayerBuilderBaseRanking(object):
         self._exp_level = exp_level
 
     @property
-    def rank(self):
-        """Gets the rank of this PlayerBuilderBaseRanking.  # noqa: E501
+    def name(self):
+        """Gets the name of this PlayerBuilderBaseRanking.  # noqa: E501
 
 
-        :return: The rank of this PlayerBuilderBaseRanking.  # noqa: E501
-        :rtype: int
+        :return: The name of this PlayerBuilderBaseRanking.  # noqa: E501
+        :rtype: str
         """
-        return self._rank
+        return self._name
 
-    @rank.setter
-    def rank(self, rank):
-        """Sets the rank of this PlayerBuilderBaseRanking.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PlayerBuilderBaseRanking.
 
 
-        :param rank: The rank of this PlayerBuilderBaseRanking.  # noqa: E501
-        :type: int
+        :param name: The name of this PlayerBuilderBaseRanking.  # noqa: E501
+        :type: str
         """
 
-        self._rank = rank
+        self._name = name
 
     @property
     def previous_rank(self):
@@ -225,25 +204,46 @@ class PlayerBuilderBaseRanking(object):
         self._previous_rank = previous_rank
 
     @property
-    def builder_base_trophies(self):
-        """Gets the builder_base_trophies of this PlayerBuilderBaseRanking.  # noqa: E501
+    def rank(self):
+        """Gets the rank of this PlayerBuilderBaseRanking.  # noqa: E501
 
 
-        :return: The builder_base_trophies of this PlayerBuilderBaseRanking.  # noqa: E501
+        :return: The rank of this PlayerBuilderBaseRanking.  # noqa: E501
         :rtype: int
         """
-        return self._builder_base_trophies
+        return self._rank
 
-    @builder_base_trophies.setter
-    def builder_base_trophies(self, builder_base_trophies):
-        """Sets the builder_base_trophies of this PlayerBuilderBaseRanking.
+    @rank.setter
+    def rank(self, rank):
+        """Sets the rank of this PlayerBuilderBaseRanking.
 
 
-        :param builder_base_trophies: The builder_base_trophies of this PlayerBuilderBaseRanking.  # noqa: E501
+        :param rank: The rank of this PlayerBuilderBaseRanking.  # noqa: E501
         :type: int
         """
 
-        self._builder_base_trophies = builder_base_trophies
+        self._rank = rank
+
+    @property
+    def tag(self):
+        """Gets the tag of this PlayerBuilderBaseRanking.  # noqa: E501
+
+
+        :return: The tag of this PlayerBuilderBaseRanking.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this PlayerBuilderBaseRanking.
+
+
+        :param tag: The tag of this PlayerBuilderBaseRanking.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

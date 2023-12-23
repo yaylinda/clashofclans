@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,96 +28,54 @@ class ClanWar(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'clan': 'WarClan',
-        'team_size': 'int',
         'attacks_per_member': 'int',
+        'clan': 'WarClan',
+        'end_time': 'str',
         'opponent': 'WarClan',
+        'preparation_start_time': 'str',
         'start_time': 'str',
         'state': 'str',
-        'end_time': 'str',
-        'preparation_start_time': 'str'
+        'team_size': 'int'
     }
 
     attribute_map = {
-        'clan': 'clan',
-        'team_size': 'teamSize',
         'attacks_per_member': 'attacksPerMember',
+        'clan': 'clan',
+        'end_time': 'endTime',
         'opponent': 'opponent',
+        'preparation_start_time': 'preparationStartTime',
         'start_time': 'startTime',
         'state': 'state',
-        'end_time': 'endTime',
-        'preparation_start_time': 'preparationStartTime'
+        'team_size': 'teamSize'
     }
 
-    def __init__(self, clan=None, team_size=None, attacks_per_member=None, opponent=None, start_time=None, state=None, end_time=None, preparation_start_time=None):  # noqa: E501
+    def __init__(self, attacks_per_member=None, clan=None, end_time=None, opponent=None, preparation_start_time=None, start_time=None, state=None, team_size=None):  # noqa: E501
         """ClanWar - a model defined in Swagger"""  # noqa: E501
-        self._clan = None
-        self._team_size = None
         self._attacks_per_member = None
+        self._clan = None
+        self._end_time = None
         self._opponent = None
+        self._preparation_start_time = None
         self._start_time = None
         self._state = None
-        self._end_time = None
-        self._preparation_start_time = None
+        self._team_size = None
         self.discriminator = None
-        if clan is not None:
-            self.clan = clan
-        if team_size is not None:
-            self.team_size = team_size
         if attacks_per_member is not None:
             self.attacks_per_member = attacks_per_member
+        if clan is not None:
+            self.clan = clan
+        if end_time is not None:
+            self.end_time = end_time
         if opponent is not None:
             self.opponent = opponent
+        if preparation_start_time is not None:
+            self.preparation_start_time = preparation_start_time
         if start_time is not None:
             self.start_time = start_time
         if state is not None:
             self.state = state
-        if end_time is not None:
-            self.end_time = end_time
-        if preparation_start_time is not None:
-            self.preparation_start_time = preparation_start_time
-
-    @property
-    def clan(self):
-        """Gets the clan of this ClanWar.  # noqa: E501
-
-
-        :return: The clan of this ClanWar.  # noqa: E501
-        :rtype: WarClan
-        """
-        return self._clan
-
-    @clan.setter
-    def clan(self, clan):
-        """Sets the clan of this ClanWar.
-
-
-        :param clan: The clan of this ClanWar.  # noqa: E501
-        :type: WarClan
-        """
-
-        self._clan = clan
-
-    @property
-    def team_size(self):
-        """Gets the team_size of this ClanWar.  # noqa: E501
-
-
-        :return: The team_size of this ClanWar.  # noqa: E501
-        :rtype: int
-        """
-        return self._team_size
-
-    @team_size.setter
-    def team_size(self, team_size):
-        """Sets the team_size of this ClanWar.
-
-
-        :param team_size: The team_size of this ClanWar.  # noqa: E501
-        :type: int
-        """
-
-        self._team_size = team_size
+        if team_size is not None:
+            self.team_size = team_size
 
     @property
     def attacks_per_member(self):
@@ -141,6 +99,48 @@ class ClanWar(object):
         self._attacks_per_member = attacks_per_member
 
     @property
+    def clan(self):
+        """Gets the clan of this ClanWar.  # noqa: E501
+
+
+        :return: The clan of this ClanWar.  # noqa: E501
+        :rtype: WarClan
+        """
+        return self._clan
+
+    @clan.setter
+    def clan(self, clan):
+        """Sets the clan of this ClanWar.
+
+
+        :param clan: The clan of this ClanWar.  # noqa: E501
+        :type: WarClan
+        """
+
+        self._clan = clan
+
+    @property
+    def end_time(self):
+        """Gets the end_time of this ClanWar.  # noqa: E501
+
+
+        :return: The end_time of this ClanWar.  # noqa: E501
+        :rtype: str
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this ClanWar.
+
+
+        :param end_time: The end_time of this ClanWar.  # noqa: E501
+        :type: str
+        """
+
+        self._end_time = end_time
+
+    @property
     def opponent(self):
         """Gets the opponent of this ClanWar.  # noqa: E501
 
@@ -160,6 +160,27 @@ class ClanWar(object):
         """
 
         self._opponent = opponent
+
+    @property
+    def preparation_start_time(self):
+        """Gets the preparation_start_time of this ClanWar.  # noqa: E501
+
+
+        :return: The preparation_start_time of this ClanWar.  # noqa: E501
+        :rtype: str
+        """
+        return self._preparation_start_time
+
+    @preparation_start_time.setter
+    def preparation_start_time(self, preparation_start_time):
+        """Sets the preparation_start_time of this ClanWar.
+
+
+        :param preparation_start_time: The preparation_start_time of this ClanWar.  # noqa: E501
+        :type: str
+        """
+
+        self._preparation_start_time = preparation_start_time
 
     @property
     def start_time(self):
@@ -200,7 +221,7 @@ class ClanWar(object):
         :param state: The state of this ClanWar.  # noqa: E501
         :type: str
         """
-        allowed_values = ["CLAN_NOT_FOUND", "ACCESS_DENIED", "NOT_IN_WAR", "IN_MATCHMAKING", "ENTER_WAR", "MATCHED", "PREPARATION", "WAR", "IN_WAR", "ENDED"]  # noqa: E501
+        allowed_values = ["clanNotFound", "accessDenied", "notInWar", "inMatchmaking", "enterWar", "matched", "preparation", "war", "inWar", "ended"]  # noqa: E501
         if state not in allowed_values:
             raise ValueError(
                 "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
@@ -210,46 +231,25 @@ class ClanWar(object):
         self._state = state
 
     @property
-    def end_time(self):
-        """Gets the end_time of this ClanWar.  # noqa: E501
+    def team_size(self):
+        """Gets the team_size of this ClanWar.  # noqa: E501
 
 
-        :return: The end_time of this ClanWar.  # noqa: E501
-        :rtype: str
+        :return: The team_size of this ClanWar.  # noqa: E501
+        :rtype: int
         """
-        return self._end_time
+        return self._team_size
 
-    @end_time.setter
-    def end_time(self, end_time):
-        """Sets the end_time of this ClanWar.
-
-
-        :param end_time: The end_time of this ClanWar.  # noqa: E501
-        :type: str
-        """
-
-        self._end_time = end_time
-
-    @property
-    def preparation_start_time(self):
-        """Gets the preparation_start_time of this ClanWar.  # noqa: E501
+    @team_size.setter
+    def team_size(self, team_size):
+        """Sets the team_size of this ClanWar.
 
 
-        :return: The preparation_start_time of this ClanWar.  # noqa: E501
-        :rtype: str
-        """
-        return self._preparation_start_time
-
-    @preparation_start_time.setter
-    def preparation_start_time(self, preparation_start_time):
-        """Sets the preparation_start_time of this ClanWar.
-
-
-        :param preparation_start_time: The preparation_start_time of this ClanWar.  # noqa: E501
-        :type: str
+        :param team_size: The team_size of this ClanWar.  # noqa: E501
+        :type: int
         """
 
-        self._preparation_start_time = preparation_start_time
+        self._team_size = team_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

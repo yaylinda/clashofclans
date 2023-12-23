@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,105 +28,84 @@ class ClanMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'league': 'League',
         'builder_base_league': 'BuilderBaseLeague',
-        'tag': 'str',
-        'name': 'str',
-        'role': 'str',
-        'town_hall_level': 'int',
-        'exp_level': 'int',
+        'builder_base_trophies': 'int',
         'clan_rank': 'int',
-        'previous_clan_rank': 'int',
         'donations': 'int',
         'donations_received': 'int',
-        'trophies': 'int',
-        'builder_base_trophies': 'int',
-        'player_house': 'PlayerHouse'
+        'exp_level': 'int',
+        'league': 'League',
+        'name': 'str',
+        'player_house': 'PlayerHouse',
+        'previous_clan_rank': 'int',
+        'role': 'str',
+        'tag': 'str',
+        'town_hall_level': 'int',
+        'trophies': 'int'
     }
 
     attribute_map = {
-        'league': 'league',
         'builder_base_league': 'builderBaseLeague',
-        'tag': 'tag',
-        'name': 'name',
-        'role': 'role',
-        'town_hall_level': 'townHallLevel',
-        'exp_level': 'expLevel',
+        'builder_base_trophies': 'builderBaseTrophies',
         'clan_rank': 'clanRank',
-        'previous_clan_rank': 'previousClanRank',
         'donations': 'donations',
         'donations_received': 'donationsReceived',
-        'trophies': 'trophies',
-        'builder_base_trophies': 'builderBaseTrophies',
-        'player_house': 'playerHouse'
+        'exp_level': 'expLevel',
+        'league': 'league',
+        'name': 'name',
+        'player_house': 'playerHouse',
+        'previous_clan_rank': 'previousClanRank',
+        'role': 'role',
+        'tag': 'tag',
+        'town_hall_level': 'townHallLevel',
+        'trophies': 'trophies'
     }
 
-    def __init__(self, league=None, builder_base_league=None, tag=None, name=None, role=None, town_hall_level=None, exp_level=None, clan_rank=None, previous_clan_rank=None, donations=None, donations_received=None, trophies=None, builder_base_trophies=None, player_house=None):  # noqa: E501
+    def __init__(self, builder_base_league=None, builder_base_trophies=None, clan_rank=None, donations=None, donations_received=None, exp_level=None, league=None, name=None, player_house=None, previous_clan_rank=None, role=None, tag=None, town_hall_level=None, trophies=None):  # noqa: E501
         """ClanMember - a model defined in Swagger"""  # noqa: E501
-        self._league = None
         self._builder_base_league = None
-        self._tag = None
-        self._name = None
-        self._role = None
-        self._town_hall_level = None
-        self._exp_level = None
+        self._builder_base_trophies = None
         self._clan_rank = None
-        self._previous_clan_rank = None
         self._donations = None
         self._donations_received = None
-        self._trophies = None
-        self._builder_base_trophies = None
+        self._exp_level = None
+        self._league = None
+        self._name = None
         self._player_house = None
+        self._previous_clan_rank = None
+        self._role = None
+        self._tag = None
+        self._town_hall_level = None
+        self._trophies = None
         self.discriminator = None
-        if league is not None:
-            self.league = league
         if builder_base_league is not None:
             self.builder_base_league = builder_base_league
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
-        if role is not None:
-            self.role = role
-        if town_hall_level is not None:
-            self.town_hall_level = town_hall_level
-        if exp_level is not None:
-            self.exp_level = exp_level
+        if builder_base_trophies is not None:
+            self.builder_base_trophies = builder_base_trophies
         if clan_rank is not None:
             self.clan_rank = clan_rank
-        if previous_clan_rank is not None:
-            self.previous_clan_rank = previous_clan_rank
         if donations is not None:
             self.donations = donations
         if donations_received is not None:
             self.donations_received = donations_received
-        if trophies is not None:
-            self.trophies = trophies
-        if builder_base_trophies is not None:
-            self.builder_base_trophies = builder_base_trophies
+        if exp_level is not None:
+            self.exp_level = exp_level
+        if league is not None:
+            self.league = league
+        if name is not None:
+            self.name = name
         if player_house is not None:
             self.player_house = player_house
-
-    @property
-    def league(self):
-        """Gets the league of this ClanMember.  # noqa: E501
-
-
-        :return: The league of this ClanMember.  # noqa: E501
-        :rtype: League
-        """
-        return self._league
-
-    @league.setter
-    def league(self, league):
-        """Sets the league of this ClanMember.
-
-
-        :param league: The league of this ClanMember.  # noqa: E501
-        :type: League
-        """
-
-        self._league = league
+        if previous_clan_rank is not None:
+            self.previous_clan_rank = previous_clan_rank
+        if role is not None:
+            self.role = role
+        if tag is not None:
+            self.tag = tag
+        if town_hall_level is not None:
+            self.town_hall_level = town_hall_level
+        if trophies is not None:
+            self.trophies = trophies
 
     @property
     def builder_base_league(self):
@@ -150,115 +129,25 @@ class ClanMember(object):
         self._builder_base_league = builder_base_league
 
     @property
-    def tag(self):
-        """Gets the tag of this ClanMember.  # noqa: E501
+    def builder_base_trophies(self):
+        """Gets the builder_base_trophies of this ClanMember.  # noqa: E501
 
 
-        :return: The tag of this ClanMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanMember.
-
-
-        :param tag: The tag of this ClanMember.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this ClanMember.  # noqa: E501
-
-
-        :return: The name of this ClanMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanMember.
-
-
-        :param name: The name of this ClanMember.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def role(self):
-        """Gets the role of this ClanMember.  # noqa: E501
-
-
-        :return: The role of this ClanMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._role
-
-    @role.setter
-    def role(self, role):
-        """Sets the role of this ClanMember.
-
-
-        :param role: The role of this ClanMember.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["NOT_MEMBER", "MEMBER", "LEADER", "ADMIN", "COLEADER"]  # noqa: E501
-        if role not in allowed_values:
-            raise ValueError(
-                "Invalid value for `role` ({0}), must be one of {1}"  # noqa: E501
-                .format(role, allowed_values)
-            )
-
-        self._role = role
-
-    @property
-    def town_hall_level(self):
-        """Gets the town_hall_level of this ClanMember.  # noqa: E501
-
-
-        :return: The town_hall_level of this ClanMember.  # noqa: E501
+        :return: The builder_base_trophies of this ClanMember.  # noqa: E501
         :rtype: int
         """
-        return self._town_hall_level
+        return self._builder_base_trophies
 
-    @town_hall_level.setter
-    def town_hall_level(self, town_hall_level):
-        """Sets the town_hall_level of this ClanMember.
+    @builder_base_trophies.setter
+    def builder_base_trophies(self, builder_base_trophies):
+        """Sets the builder_base_trophies of this ClanMember.
 
 
-        :param town_hall_level: The town_hall_level of this ClanMember.  # noqa: E501
+        :param builder_base_trophies: The builder_base_trophies of this ClanMember.  # noqa: E501
         :type: int
         """
 
-        self._town_hall_level = town_hall_level
-
-    @property
-    def exp_level(self):
-        """Gets the exp_level of this ClanMember.  # noqa: E501
-
-
-        :return: The exp_level of this ClanMember.  # noqa: E501
-        :rtype: int
-        """
-        return self._exp_level
-
-    @exp_level.setter
-    def exp_level(self, exp_level):
-        """Sets the exp_level of this ClanMember.
-
-
-        :param exp_level: The exp_level of this ClanMember.  # noqa: E501
-        :type: int
-        """
-
-        self._exp_level = exp_level
+        self._builder_base_trophies = builder_base_trophies
 
     @property
     def clan_rank(self):
@@ -280,27 +169,6 @@ class ClanMember(object):
         """
 
         self._clan_rank = clan_rank
-
-    @property
-    def previous_clan_rank(self):
-        """Gets the previous_clan_rank of this ClanMember.  # noqa: E501
-
-
-        :return: The previous_clan_rank of this ClanMember.  # noqa: E501
-        :rtype: int
-        """
-        return self._previous_clan_rank
-
-    @previous_clan_rank.setter
-    def previous_clan_rank(self, previous_clan_rank):
-        """Sets the previous_clan_rank of this ClanMember.
-
-
-        :param previous_clan_rank: The previous_clan_rank of this ClanMember.  # noqa: E501
-        :type: int
-        """
-
-        self._previous_clan_rank = previous_clan_rank
 
     @property
     def donations(self):
@@ -345,46 +213,67 @@ class ClanMember(object):
         self._donations_received = donations_received
 
     @property
-    def trophies(self):
-        """Gets the trophies of this ClanMember.  # noqa: E501
+    def exp_level(self):
+        """Gets the exp_level of this ClanMember.  # noqa: E501
 
 
-        :return: The trophies of this ClanMember.  # noqa: E501
+        :return: The exp_level of this ClanMember.  # noqa: E501
         :rtype: int
         """
-        return self._trophies
+        return self._exp_level
 
-    @trophies.setter
-    def trophies(self, trophies):
-        """Sets the trophies of this ClanMember.
+    @exp_level.setter
+    def exp_level(self, exp_level):
+        """Sets the exp_level of this ClanMember.
 
 
-        :param trophies: The trophies of this ClanMember.  # noqa: E501
+        :param exp_level: The exp_level of this ClanMember.  # noqa: E501
         :type: int
         """
 
-        self._trophies = trophies
+        self._exp_level = exp_level
 
     @property
-    def builder_base_trophies(self):
-        """Gets the builder_base_trophies of this ClanMember.  # noqa: E501
+    def league(self):
+        """Gets the league of this ClanMember.  # noqa: E501
 
 
-        :return: The builder_base_trophies of this ClanMember.  # noqa: E501
-        :rtype: int
+        :return: The league of this ClanMember.  # noqa: E501
+        :rtype: League
         """
-        return self._builder_base_trophies
+        return self._league
 
-    @builder_base_trophies.setter
-    def builder_base_trophies(self, builder_base_trophies):
-        """Sets the builder_base_trophies of this ClanMember.
+    @league.setter
+    def league(self, league):
+        """Sets the league of this ClanMember.
 
 
-        :param builder_base_trophies: The builder_base_trophies of this ClanMember.  # noqa: E501
-        :type: int
+        :param league: The league of this ClanMember.  # noqa: E501
+        :type: League
         """
 
-        self._builder_base_trophies = builder_base_trophies
+        self._league = league
+
+    @property
+    def name(self):
+        """Gets the name of this ClanMember.  # noqa: E501
+
+
+        :return: The name of this ClanMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanMember.
+
+
+        :param name: The name of this ClanMember.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def player_house(self):
@@ -406,6 +295,117 @@ class ClanMember(object):
         """
 
         self._player_house = player_house
+
+    @property
+    def previous_clan_rank(self):
+        """Gets the previous_clan_rank of this ClanMember.  # noqa: E501
+
+
+        :return: The previous_clan_rank of this ClanMember.  # noqa: E501
+        :rtype: int
+        """
+        return self._previous_clan_rank
+
+    @previous_clan_rank.setter
+    def previous_clan_rank(self, previous_clan_rank):
+        """Sets the previous_clan_rank of this ClanMember.
+
+
+        :param previous_clan_rank: The previous_clan_rank of this ClanMember.  # noqa: E501
+        :type: int
+        """
+
+        self._previous_clan_rank = previous_clan_rank
+
+    @property
+    def role(self):
+        """Gets the role of this ClanMember.  # noqa: E501
+
+
+        :return: The role of this ClanMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """Sets the role of this ClanMember.
+
+
+        :param role: The role of this ClanMember.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["notMember", "member", "leader", "admin", "coleader"]  # noqa: E501
+        if role not in allowed_values:
+            raise ValueError(
+                "Invalid value for `role` ({0}), must be one of {1}"  # noqa: E501
+                .format(role, allowed_values)
+            )
+
+        self._role = role
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanMember.  # noqa: E501
+
+
+        :return: The tag of this ClanMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanMember.
+
+
+        :param tag: The tag of this ClanMember.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
+
+    @property
+    def town_hall_level(self):
+        """Gets the town_hall_level of this ClanMember.  # noqa: E501
+
+
+        :return: The town_hall_level of this ClanMember.  # noqa: E501
+        :rtype: int
+        """
+        return self._town_hall_level
+
+    @town_hall_level.setter
+    def town_hall_level(self, town_hall_level):
+        """Sets the town_hall_level of this ClanMember.
+
+
+        :param town_hall_level: The town_hall_level of this ClanMember.  # noqa: E501
+        :type: int
+        """
+
+        self._town_hall_level = town_hall_level
+
+    @property
+    def trophies(self):
+        """Gets the trophies of this ClanMember.  # noqa: E501
+
+
+        :return: The trophies of this ClanMember.  # noqa: E501
+        :rtype: int
+        """
+        return self._trophies
+
+    @trophies.setter
+    def trophies(self, trophies):
+        """Sets the trophies of this ClanMember.
+
+
+        :param trophies: The trophies of this ClanMember.  # noqa: E501
+        :type: int
+        """
+
+        self._trophies = trophies
 
     def to_dict(self):
         """Returns the model properties as a dict"""

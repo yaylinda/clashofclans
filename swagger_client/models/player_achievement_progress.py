@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,154 +28,49 @@ class PlayerAchievementProgress(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'stars': 'int',
-        'value': 'int',
-        'name': 'JsonLocalizedName',
-        'target': 'int',
-        'info': 'JsonLocalizedName',
         'completion_info': 'JsonLocalizedName',
+        'info': 'JsonLocalizedName',
+        'name': 'JsonLocalizedName',
+        'stars': 'int',
+        'target': 'int',
+        'value': 'int',
         'village': 'str'
     }
 
     attribute_map = {
-        'stars': 'stars',
-        'value': 'value',
-        'name': 'name',
-        'target': 'target',
-        'info': 'info',
         'completion_info': 'completionInfo',
+        'info': 'info',
+        'name': 'name',
+        'stars': 'stars',
+        'target': 'target',
+        'value': 'value',
         'village': 'village'
     }
 
-    def __init__(self, stars=None, value=None, name=None, target=None, info=None, completion_info=None, village=None):  # noqa: E501
+    def __init__(self, completion_info=None, info=None, name=None, stars=None, target=None, value=None, village=None):  # noqa: E501
         """PlayerAchievementProgress - a model defined in Swagger"""  # noqa: E501
-        self._stars = None
-        self._value = None
-        self._name = None
-        self._target = None
-        self._info = None
         self._completion_info = None
+        self._info = None
+        self._name = None
+        self._stars = None
+        self._target = None
+        self._value = None
         self._village = None
         self.discriminator = None
-        if stars is not None:
-            self.stars = stars
-        if value is not None:
-            self.value = value
-        if name is not None:
-            self.name = name
-        if target is not None:
-            self.target = target
-        if info is not None:
-            self.info = info
         if completion_info is not None:
             self.completion_info = completion_info
+        if info is not None:
+            self.info = info
+        if name is not None:
+            self.name = name
+        if stars is not None:
+            self.stars = stars
+        if target is not None:
+            self.target = target
+        if value is not None:
+            self.value = value
         if village is not None:
             self.village = village
-
-    @property
-    def stars(self):
-        """Gets the stars of this PlayerAchievementProgress.  # noqa: E501
-
-
-        :return: The stars of this PlayerAchievementProgress.  # noqa: E501
-        :rtype: int
-        """
-        return self._stars
-
-    @stars.setter
-    def stars(self, stars):
-        """Sets the stars of this PlayerAchievementProgress.
-
-
-        :param stars: The stars of this PlayerAchievementProgress.  # noqa: E501
-        :type: int
-        """
-
-        self._stars = stars
-
-    @property
-    def value(self):
-        """Gets the value of this PlayerAchievementProgress.  # noqa: E501
-
-
-        :return: The value of this PlayerAchievementProgress.  # noqa: E501
-        :rtype: int
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value):
-        """Sets the value of this PlayerAchievementProgress.
-
-
-        :param value: The value of this PlayerAchievementProgress.  # noqa: E501
-        :type: int
-        """
-
-        self._value = value
-
-    @property
-    def name(self):
-        """Gets the name of this PlayerAchievementProgress.  # noqa: E501
-
-
-        :return: The name of this PlayerAchievementProgress.  # noqa: E501
-        :rtype: JsonLocalizedName
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PlayerAchievementProgress.
-
-
-        :param name: The name of this PlayerAchievementProgress.  # noqa: E501
-        :type: JsonLocalizedName
-        """
-
-        self._name = name
-
-    @property
-    def target(self):
-        """Gets the target of this PlayerAchievementProgress.  # noqa: E501
-
-
-        :return: The target of this PlayerAchievementProgress.  # noqa: E501
-        :rtype: int
-        """
-        return self._target
-
-    @target.setter
-    def target(self, target):
-        """Sets the target of this PlayerAchievementProgress.
-
-
-        :param target: The target of this PlayerAchievementProgress.  # noqa: E501
-        :type: int
-        """
-
-        self._target = target
-
-    @property
-    def info(self):
-        """Gets the info of this PlayerAchievementProgress.  # noqa: E501
-
-
-        :return: The info of this PlayerAchievementProgress.  # noqa: E501
-        :rtype: JsonLocalizedName
-        """
-        return self._info
-
-    @info.setter
-    def info(self, info):
-        """Sets the info of this PlayerAchievementProgress.
-
-
-        :param info: The info of this PlayerAchievementProgress.  # noqa: E501
-        :type: JsonLocalizedName
-        """
-
-        self._info = info
 
     @property
     def completion_info(self):
@@ -199,6 +94,111 @@ class PlayerAchievementProgress(object):
         self._completion_info = completion_info
 
     @property
+    def info(self):
+        """Gets the info of this PlayerAchievementProgress.  # noqa: E501
+
+
+        :return: The info of this PlayerAchievementProgress.  # noqa: E501
+        :rtype: JsonLocalizedName
+        """
+        return self._info
+
+    @info.setter
+    def info(self, info):
+        """Sets the info of this PlayerAchievementProgress.
+
+
+        :param info: The info of this PlayerAchievementProgress.  # noqa: E501
+        :type: JsonLocalizedName
+        """
+
+        self._info = info
+
+    @property
+    def name(self):
+        """Gets the name of this PlayerAchievementProgress.  # noqa: E501
+
+
+        :return: The name of this PlayerAchievementProgress.  # noqa: E501
+        :rtype: JsonLocalizedName
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PlayerAchievementProgress.
+
+
+        :param name: The name of this PlayerAchievementProgress.  # noqa: E501
+        :type: JsonLocalizedName
+        """
+
+        self._name = name
+
+    @property
+    def stars(self):
+        """Gets the stars of this PlayerAchievementProgress.  # noqa: E501
+
+
+        :return: The stars of this PlayerAchievementProgress.  # noqa: E501
+        :rtype: int
+        """
+        return self._stars
+
+    @stars.setter
+    def stars(self, stars):
+        """Sets the stars of this PlayerAchievementProgress.
+
+
+        :param stars: The stars of this PlayerAchievementProgress.  # noqa: E501
+        :type: int
+        """
+
+        self._stars = stars
+
+    @property
+    def target(self):
+        """Gets the target of this PlayerAchievementProgress.  # noqa: E501
+
+
+        :return: The target of this PlayerAchievementProgress.  # noqa: E501
+        :rtype: int
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this PlayerAchievementProgress.
+
+
+        :param target: The target of this PlayerAchievementProgress.  # noqa: E501
+        :type: int
+        """
+
+        self._target = target
+
+    @property
+    def value(self):
+        """Gets the value of this PlayerAchievementProgress.  # noqa: E501
+
+
+        :return: The value of this PlayerAchievementProgress.  # noqa: E501
+        :rtype: int
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this PlayerAchievementProgress.
+
+
+        :param value: The value of this PlayerAchievementProgress.  # noqa: E501
+        :type: int
+        """
+
+        self._value = value
+
+    @property
     def village(self):
         """Gets the village of this PlayerAchievementProgress.  # noqa: E501
 
@@ -216,7 +216,7 @@ class PlayerAchievementProgress(object):
         :param village: The village of this PlayerAchievementProgress.  # noqa: E501
         :type: str
         """
-        allowed_values = ["HOME_VILLAGE", "BUILDER_BASE", "CLAN_CAPITAL"]  # noqa: E501
+        allowed_values = ["homeVillage", "builderBase", "clanCapital"]  # noqa: E501
         if village not in allowed_values:
             raise ValueError(
                 "Invalid value for `village` ({0}), must be one of {1}"  # noqa: E501

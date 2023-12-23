@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,50 +28,29 @@ class Language(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'id': 'int',
-        'language_code': 'str'
+        'language_code': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
         'id': 'id',
-        'language_code': 'languageCode'
+        'language_code': 'languageCode',
+        'name': 'name'
     }
 
-    def __init__(self, name=None, id=None, language_code=None):  # noqa: E501
+    def __init__(self, id=None, language_code=None, name=None):  # noqa: E501
         """Language - a model defined in Swagger"""  # noqa: E501
-        self._name = None
         self._id = None
         self._language_code = None
+        self._name = None
         self.discriminator = None
-        if name is not None:
-            self.name = name
         if id is not None:
             self.id = id
         if language_code is not None:
             self.language_code = language_code
-
-    @property
-    def name(self):
-        """Gets the name of this Language.  # noqa: E501
-
-
-        :return: The name of this Language.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Language.
-
-
-        :param name: The name of this Language.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
+        if name is not None:
+            self.name = name
 
     @property
     def id(self):
@@ -114,6 +93,27 @@ class Language(object):
         """
 
         self._language_code = language_code
+
+    @property
+    def name(self):
+        """Gets the name of this Language.  # noqa: E501
+
+
+        :return: The name of this Language.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Language.
+
+
+        :param name: The name of this Language.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

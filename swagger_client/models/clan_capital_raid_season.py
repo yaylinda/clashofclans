@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -29,73 +29,73 @@ class ClanCapitalRaidSeason(object):
     """
     swagger_types = {
         'attack_log': 'ClanCapitalRaidSeasonAttackLogList',
-        'defense_log': 'ClanCapitalRaidSeasonDefenseLogList',
-        'state': 'str',
-        'start_time': 'str',
-        'end_time': 'str',
         'capital_total_loot': 'int',
-        'raids_completed': 'int',
-        'total_attacks': 'int',
-        'enemy_districts_destroyed': 'int',
-        'offensive_reward': 'int',
+        'defense_log': 'ClanCapitalRaidSeasonDefenseLogList',
         'defensive_reward': 'int',
-        'members': 'ClanCapitalRaidSeasonMemberList'
+        'end_time': 'str',
+        'enemy_districts_destroyed': 'int',
+        'members': 'ClanCapitalRaidSeasonMemberList',
+        'offensive_reward': 'int',
+        'raids_completed': 'int',
+        'start_time': 'str',
+        'state': 'str',
+        'total_attacks': 'int'
     }
 
     attribute_map = {
         'attack_log': 'attackLog',
-        'defense_log': 'defenseLog',
-        'state': 'state',
-        'start_time': 'startTime',
-        'end_time': 'endTime',
         'capital_total_loot': 'capitalTotalLoot',
-        'raids_completed': 'raidsCompleted',
-        'total_attacks': 'totalAttacks',
-        'enemy_districts_destroyed': 'enemyDistrictsDestroyed',
-        'offensive_reward': 'offensiveReward',
+        'defense_log': 'defenseLog',
         'defensive_reward': 'defensiveReward',
-        'members': 'members'
+        'end_time': 'endTime',
+        'enemy_districts_destroyed': 'enemyDistrictsDestroyed',
+        'members': 'members',
+        'offensive_reward': 'offensiveReward',
+        'raids_completed': 'raidsCompleted',
+        'start_time': 'startTime',
+        'state': 'state',
+        'total_attacks': 'totalAttacks'
     }
 
-    def __init__(self, attack_log=None, defense_log=None, state=None, start_time=None, end_time=None, capital_total_loot=None, raids_completed=None, total_attacks=None, enemy_districts_destroyed=None, offensive_reward=None, defensive_reward=None, members=None):  # noqa: E501
+    def __init__(self, attack_log=None, capital_total_loot=None, defense_log=None, defensive_reward=None, end_time=None, enemy_districts_destroyed=None, members=None, offensive_reward=None, raids_completed=None, start_time=None, state=None, total_attacks=None):  # noqa: E501
         """ClanCapitalRaidSeason - a model defined in Swagger"""  # noqa: E501
         self._attack_log = None
-        self._defense_log = None
-        self._state = None
-        self._start_time = None
-        self._end_time = None
         self._capital_total_loot = None
-        self._raids_completed = None
-        self._total_attacks = None
-        self._enemy_districts_destroyed = None
-        self._offensive_reward = None
+        self._defense_log = None
         self._defensive_reward = None
+        self._end_time = None
+        self._enemy_districts_destroyed = None
         self._members = None
+        self._offensive_reward = None
+        self._raids_completed = None
+        self._start_time = None
+        self._state = None
+        self._total_attacks = None
         self.discriminator = None
         if attack_log is not None:
             self.attack_log = attack_log
-        if defense_log is not None:
-            self.defense_log = defense_log
-        if state is not None:
-            self.state = state
-        if start_time is not None:
-            self.start_time = start_time
-        if end_time is not None:
-            self.end_time = end_time
         if capital_total_loot is not None:
             self.capital_total_loot = capital_total_loot
-        if raids_completed is not None:
-            self.raids_completed = raids_completed
-        if total_attacks is not None:
-            self.total_attacks = total_attacks
-        if enemy_districts_destroyed is not None:
-            self.enemy_districts_destroyed = enemy_districts_destroyed
-        if offensive_reward is not None:
-            self.offensive_reward = offensive_reward
+        if defense_log is not None:
+            self.defense_log = defense_log
         if defensive_reward is not None:
             self.defensive_reward = defensive_reward
+        if end_time is not None:
+            self.end_time = end_time
+        if enemy_districts_destroyed is not None:
+            self.enemy_districts_destroyed = enemy_districts_destroyed
         if members is not None:
             self.members = members
+        if offensive_reward is not None:
+            self.offensive_reward = offensive_reward
+        if raids_completed is not None:
+            self.raids_completed = raids_completed
+        if start_time is not None:
+            self.start_time = start_time
+        if state is not None:
+            self.state = state
+        if total_attacks is not None:
+            self.total_attacks = total_attacks
 
     @property
     def attack_log(self):
@@ -119,90 +119,6 @@ class ClanCapitalRaidSeason(object):
         self._attack_log = attack_log
 
     @property
-    def defense_log(self):
-        """Gets the defense_log of this ClanCapitalRaidSeason.  # noqa: E501
-
-
-        :return: The defense_log of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: ClanCapitalRaidSeasonDefenseLogList
-        """
-        return self._defense_log
-
-    @defense_log.setter
-    def defense_log(self, defense_log):
-        """Sets the defense_log of this ClanCapitalRaidSeason.
-
-
-        :param defense_log: The defense_log of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: ClanCapitalRaidSeasonDefenseLogList
-        """
-
-        self._defense_log = defense_log
-
-    @property
-    def state(self):
-        """Gets the state of this ClanCapitalRaidSeason.  # noqa: E501
-
-
-        :return: The state of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """Sets the state of this ClanCapitalRaidSeason.
-
-
-        :param state: The state of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: str
-        """
-
-        self._state = state
-
-    @property
-    def start_time(self):
-        """Gets the start_time of this ClanCapitalRaidSeason.  # noqa: E501
-
-
-        :return: The start_time of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: str
-        """
-        return self._start_time
-
-    @start_time.setter
-    def start_time(self, start_time):
-        """Sets the start_time of this ClanCapitalRaidSeason.
-
-
-        :param start_time: The start_time of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: str
-        """
-
-        self._start_time = start_time
-
-    @property
-    def end_time(self):
-        """Gets the end_time of this ClanCapitalRaidSeason.  # noqa: E501
-
-
-        :return: The end_time of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: str
-        """
-        return self._end_time
-
-    @end_time.setter
-    def end_time(self, end_time):
-        """Sets the end_time of this ClanCapitalRaidSeason.
-
-
-        :param end_time: The end_time of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: str
-        """
-
-        self._end_time = end_time
-
-    @property
     def capital_total_loot(self):
         """Gets the capital_total_loot of this ClanCapitalRaidSeason.  # noqa: E501
 
@@ -224,88 +140,25 @@ class ClanCapitalRaidSeason(object):
         self._capital_total_loot = capital_total_loot
 
     @property
-    def raids_completed(self):
-        """Gets the raids_completed of this ClanCapitalRaidSeason.  # noqa: E501
+    def defense_log(self):
+        """Gets the defense_log of this ClanCapitalRaidSeason.  # noqa: E501
 
 
-        :return: The raids_completed of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: int
+        :return: The defense_log of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: ClanCapitalRaidSeasonDefenseLogList
         """
-        return self._raids_completed
+        return self._defense_log
 
-    @raids_completed.setter
-    def raids_completed(self, raids_completed):
-        """Sets the raids_completed of this ClanCapitalRaidSeason.
-
-
-        :param raids_completed: The raids_completed of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: int
-        """
-
-        self._raids_completed = raids_completed
-
-    @property
-    def total_attacks(self):
-        """Gets the total_attacks of this ClanCapitalRaidSeason.  # noqa: E501
+    @defense_log.setter
+    def defense_log(self, defense_log):
+        """Sets the defense_log of this ClanCapitalRaidSeason.
 
 
-        :return: The total_attacks of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: int
-        """
-        return self._total_attacks
-
-    @total_attacks.setter
-    def total_attacks(self, total_attacks):
-        """Sets the total_attacks of this ClanCapitalRaidSeason.
-
-
-        :param total_attacks: The total_attacks of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: int
+        :param defense_log: The defense_log of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: ClanCapitalRaidSeasonDefenseLogList
         """
 
-        self._total_attacks = total_attacks
-
-    @property
-    def enemy_districts_destroyed(self):
-        """Gets the enemy_districts_destroyed of this ClanCapitalRaidSeason.  # noqa: E501
-
-
-        :return: The enemy_districts_destroyed of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: int
-        """
-        return self._enemy_districts_destroyed
-
-    @enemy_districts_destroyed.setter
-    def enemy_districts_destroyed(self, enemy_districts_destroyed):
-        """Sets the enemy_districts_destroyed of this ClanCapitalRaidSeason.
-
-
-        :param enemy_districts_destroyed: The enemy_districts_destroyed of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: int
-        """
-
-        self._enemy_districts_destroyed = enemy_districts_destroyed
-
-    @property
-    def offensive_reward(self):
-        """Gets the offensive_reward of this ClanCapitalRaidSeason.  # noqa: E501
-
-
-        :return: The offensive_reward of this ClanCapitalRaidSeason.  # noqa: E501
-        :rtype: int
-        """
-        return self._offensive_reward
-
-    @offensive_reward.setter
-    def offensive_reward(self, offensive_reward):
-        """Sets the offensive_reward of this ClanCapitalRaidSeason.
-
-
-        :param offensive_reward: The offensive_reward of this ClanCapitalRaidSeason.  # noqa: E501
-        :type: int
-        """
-
-        self._offensive_reward = offensive_reward
+        self._defense_log = defense_log
 
     @property
     def defensive_reward(self):
@@ -329,6 +182,48 @@ class ClanCapitalRaidSeason(object):
         self._defensive_reward = defensive_reward
 
     @property
+    def end_time(self):
+        """Gets the end_time of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The end_time of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: str
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this ClanCapitalRaidSeason.
+
+
+        :param end_time: The end_time of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: str
+        """
+
+        self._end_time = end_time
+
+    @property
+    def enemy_districts_destroyed(self):
+        """Gets the enemy_districts_destroyed of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The enemy_districts_destroyed of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: int
+        """
+        return self._enemy_districts_destroyed
+
+    @enemy_districts_destroyed.setter
+    def enemy_districts_destroyed(self, enemy_districts_destroyed):
+        """Sets the enemy_districts_destroyed of this ClanCapitalRaidSeason.
+
+
+        :param enemy_districts_destroyed: The enemy_districts_destroyed of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: int
+        """
+
+        self._enemy_districts_destroyed = enemy_districts_destroyed
+
+    @property
     def members(self):
         """Gets the members of this ClanCapitalRaidSeason.  # noqa: E501
 
@@ -348,6 +243,111 @@ class ClanCapitalRaidSeason(object):
         """
 
         self._members = members
+
+    @property
+    def offensive_reward(self):
+        """Gets the offensive_reward of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The offensive_reward of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: int
+        """
+        return self._offensive_reward
+
+    @offensive_reward.setter
+    def offensive_reward(self, offensive_reward):
+        """Sets the offensive_reward of this ClanCapitalRaidSeason.
+
+
+        :param offensive_reward: The offensive_reward of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: int
+        """
+
+        self._offensive_reward = offensive_reward
+
+    @property
+    def raids_completed(self):
+        """Gets the raids_completed of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The raids_completed of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: int
+        """
+        return self._raids_completed
+
+    @raids_completed.setter
+    def raids_completed(self, raids_completed):
+        """Sets the raids_completed of this ClanCapitalRaidSeason.
+
+
+        :param raids_completed: The raids_completed of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: int
+        """
+
+        self._raids_completed = raids_completed
+
+    @property
+    def start_time(self):
+        """Gets the start_time of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The start_time of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: str
+        """
+        return self._start_time
+
+    @start_time.setter
+    def start_time(self, start_time):
+        """Sets the start_time of this ClanCapitalRaidSeason.
+
+
+        :param start_time: The start_time of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: str
+        """
+
+        self._start_time = start_time
+
+    @property
+    def state(self):
+        """Gets the state of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The state of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this ClanCapitalRaidSeason.
+
+
+        :param state: The state of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: str
+        """
+
+        self._state = state
+
+    @property
+    def total_attacks(self):
+        """Gets the total_attacks of this ClanCapitalRaidSeason.  # noqa: E501
+
+
+        :return: The total_attacks of this ClanCapitalRaidSeason.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_attacks
+
+    @total_attacks.setter
+    def total_attacks(self, total_attacks):
+        """Sets the total_attacks of this ClanCapitalRaidSeason.
+
+
+        :param total_attacks: The total_attacks of this ClanCapitalRaidSeason.  # noqa: E501
+        :type: int
+        """
+
+        self._total_attacks = total_attacks
 
     def to_dict(self):
         """Returns the model properties as a dict"""

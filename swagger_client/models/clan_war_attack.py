@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,65 +28,44 @@ class ClanWarAttack(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'order': 'int',
         'attacker_tag': 'str',
         'defender_tag': 'str',
-        'stars': 'int',
         'destruction_percentage': 'int',
-        'duration': 'int'
+        'duration': 'int',
+        'order': 'int',
+        'stars': 'int'
     }
 
     attribute_map = {
-        'order': 'order',
         'attacker_tag': 'attackerTag',
         'defender_tag': 'defenderTag',
-        'stars': 'stars',
         'destruction_percentage': 'destructionPercentage',
-        'duration': 'duration'
+        'duration': 'duration',
+        'order': 'order',
+        'stars': 'stars'
     }
 
-    def __init__(self, order=None, attacker_tag=None, defender_tag=None, stars=None, destruction_percentage=None, duration=None):  # noqa: E501
+    def __init__(self, attacker_tag=None, defender_tag=None, destruction_percentage=None, duration=None, order=None, stars=None):  # noqa: E501
         """ClanWarAttack - a model defined in Swagger"""  # noqa: E501
-        self._order = None
         self._attacker_tag = None
         self._defender_tag = None
-        self._stars = None
         self._destruction_percentage = None
         self._duration = None
+        self._order = None
+        self._stars = None
         self.discriminator = None
-        if order is not None:
-            self.order = order
         if attacker_tag is not None:
             self.attacker_tag = attacker_tag
         if defender_tag is not None:
             self.defender_tag = defender_tag
-        if stars is not None:
-            self.stars = stars
         if destruction_percentage is not None:
             self.destruction_percentage = destruction_percentage
         if duration is not None:
             self.duration = duration
-
-    @property
-    def order(self):
-        """Gets the order of this ClanWarAttack.  # noqa: E501
-
-
-        :return: The order of this ClanWarAttack.  # noqa: E501
-        :rtype: int
-        """
-        return self._order
-
-    @order.setter
-    def order(self, order):
-        """Sets the order of this ClanWarAttack.
-
-
-        :param order: The order of this ClanWarAttack.  # noqa: E501
-        :type: int
-        """
-
-        self._order = order
+        if order is not None:
+            self.order = order
+        if stars is not None:
+            self.stars = stars
 
     @property
     def attacker_tag(self):
@@ -131,27 +110,6 @@ class ClanWarAttack(object):
         self._defender_tag = defender_tag
 
     @property
-    def stars(self):
-        """Gets the stars of this ClanWarAttack.  # noqa: E501
-
-
-        :return: The stars of this ClanWarAttack.  # noqa: E501
-        :rtype: int
-        """
-        return self._stars
-
-    @stars.setter
-    def stars(self, stars):
-        """Sets the stars of this ClanWarAttack.
-
-
-        :param stars: The stars of this ClanWarAttack.  # noqa: E501
-        :type: int
-        """
-
-        self._stars = stars
-
-    @property
     def destruction_percentage(self):
         """Gets the destruction_percentage of this ClanWarAttack.  # noqa: E501
 
@@ -192,6 +150,48 @@ class ClanWarAttack(object):
         """
 
         self._duration = duration
+
+    @property
+    def order(self):
+        """Gets the order of this ClanWarAttack.  # noqa: E501
+
+
+        :return: The order of this ClanWarAttack.  # noqa: E501
+        :rtype: int
+        """
+        return self._order
+
+    @order.setter
+    def order(self, order):
+        """Sets the order of this ClanWarAttack.
+
+
+        :param order: The order of this ClanWarAttack.  # noqa: E501
+        :type: int
+        """
+
+        self._order = order
+
+    @property
+    def stars(self):
+        """Gets the stars of this ClanWarAttack.  # noqa: E501
+
+
+        :return: The stars of this ClanWarAttack.  # noqa: E501
+        :rtype: int
+        """
+        return self._stars
+
+    @stars.setter
+    def stars(self, stars):
+        """Sets the stars of this ClanWarAttack.
+
+
+        :param stars: The stars of this ClanWarAttack.  # noqa: E501
+        :type: int
+        """
+
+        self._stars = stars
 
     def to_dict(self):
         """Returns the model properties as a dict"""

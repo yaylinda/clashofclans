@@ -3,7 +3,7 @@
 """
     Clash of Clans API
 
-    Check out <a href=\"https://developer.clashofclans.com/#/getting-started\" target=\"_parent\">Getting Started</a> for instructions and links to other resources. Clash of Clans API uses <a href=\"https://jwt.io/\" target=\"_blank\">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href=\"https://developer.clashofclans.com/#/account\" target=\"_parent\">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: \"Authorization: Bearer API_TOKEN\".   # noqa: E501
+    Clash of Clans API  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -28,154 +28,70 @@ class ClanWarMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag': 'str',
-        'name': 'str',
-        'map_position': 'int',
-        'townhall_level': 'int',
-        'opponent_attacks': 'int',
+        'attacks': 'ClanWarAttackList',
         'best_opponent_attack': 'ClanWarAttack',
-        'attacks': 'ClanWarAttackList'
+        'map_position': 'int',
+        'name': 'str',
+        'opponent_attacks': 'int',
+        'tag': 'str',
+        'townhall_level': 'int'
     }
 
     attribute_map = {
-        'tag': 'tag',
-        'name': 'name',
-        'map_position': 'mapPosition',
-        'townhall_level': 'townhallLevel',
-        'opponent_attacks': 'opponentAttacks',
+        'attacks': 'attacks',
         'best_opponent_attack': 'bestOpponentAttack',
-        'attacks': 'attacks'
+        'map_position': 'mapPosition',
+        'name': 'name',
+        'opponent_attacks': 'opponentAttacks',
+        'tag': 'tag',
+        'townhall_level': 'townhallLevel'
     }
 
-    def __init__(self, tag=None, name=None, map_position=None, townhall_level=None, opponent_attacks=None, best_opponent_attack=None, attacks=None):  # noqa: E501
+    def __init__(self, attacks=None, best_opponent_attack=None, map_position=None, name=None, opponent_attacks=None, tag=None, townhall_level=None):  # noqa: E501
         """ClanWarMember - a model defined in Swagger"""  # noqa: E501
-        self._tag = None
-        self._name = None
-        self._map_position = None
-        self._townhall_level = None
-        self._opponent_attacks = None
-        self._best_opponent_attack = None
         self._attacks = None
+        self._best_opponent_attack = None
+        self._map_position = None
+        self._name = None
+        self._opponent_attacks = None
+        self._tag = None
+        self._townhall_level = None
         self.discriminator = None
-        if tag is not None:
-            self.tag = tag
-        if name is not None:
-            self.name = name
-        if map_position is not None:
-            self.map_position = map_position
-        if townhall_level is not None:
-            self.townhall_level = townhall_level
-        if opponent_attacks is not None:
-            self.opponent_attacks = opponent_attacks
-        if best_opponent_attack is not None:
-            self.best_opponent_attack = best_opponent_attack
         if attacks is not None:
             self.attacks = attacks
+        if best_opponent_attack is not None:
+            self.best_opponent_attack = best_opponent_attack
+        if map_position is not None:
+            self.map_position = map_position
+        if name is not None:
+            self.name = name
+        if opponent_attacks is not None:
+            self.opponent_attacks = opponent_attacks
+        if tag is not None:
+            self.tag = tag
+        if townhall_level is not None:
+            self.townhall_level = townhall_level
 
     @property
-    def tag(self):
-        """Gets the tag of this ClanWarMember.  # noqa: E501
+    def attacks(self):
+        """Gets the attacks of this ClanWarMember.  # noqa: E501
 
 
-        :return: The tag of this ClanWarMember.  # noqa: E501
-        :rtype: str
+        :return: The attacks of this ClanWarMember.  # noqa: E501
+        :rtype: ClanWarAttackList
         """
-        return self._tag
+        return self._attacks
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ClanWarMember.
-
-
-        :param tag: The tag of this ClanWarMember.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
-
-    @property
-    def name(self):
-        """Gets the name of this ClanWarMember.  # noqa: E501
+    @attacks.setter
+    def attacks(self, attacks):
+        """Sets the attacks of this ClanWarMember.
 
 
-        :return: The name of this ClanWarMember.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ClanWarMember.
-
-
-        :param name: The name of this ClanWarMember.  # noqa: E501
-        :type: str
+        :param attacks: The attacks of this ClanWarMember.  # noqa: E501
+        :type: ClanWarAttackList
         """
 
-        self._name = name
-
-    @property
-    def map_position(self):
-        """Gets the map_position of this ClanWarMember.  # noqa: E501
-
-
-        :return: The map_position of this ClanWarMember.  # noqa: E501
-        :rtype: int
-        """
-        return self._map_position
-
-    @map_position.setter
-    def map_position(self, map_position):
-        """Sets the map_position of this ClanWarMember.
-
-
-        :param map_position: The map_position of this ClanWarMember.  # noqa: E501
-        :type: int
-        """
-
-        self._map_position = map_position
-
-    @property
-    def townhall_level(self):
-        """Gets the townhall_level of this ClanWarMember.  # noqa: E501
-
-
-        :return: The townhall_level of this ClanWarMember.  # noqa: E501
-        :rtype: int
-        """
-        return self._townhall_level
-
-    @townhall_level.setter
-    def townhall_level(self, townhall_level):
-        """Sets the townhall_level of this ClanWarMember.
-
-
-        :param townhall_level: The townhall_level of this ClanWarMember.  # noqa: E501
-        :type: int
-        """
-
-        self._townhall_level = townhall_level
-
-    @property
-    def opponent_attacks(self):
-        """Gets the opponent_attacks of this ClanWarMember.  # noqa: E501
-
-
-        :return: The opponent_attacks of this ClanWarMember.  # noqa: E501
-        :rtype: int
-        """
-        return self._opponent_attacks
-
-    @opponent_attacks.setter
-    def opponent_attacks(self, opponent_attacks):
-        """Sets the opponent_attacks of this ClanWarMember.
-
-
-        :param opponent_attacks: The opponent_attacks of this ClanWarMember.  # noqa: E501
-        :type: int
-        """
-
-        self._opponent_attacks = opponent_attacks
+        self._attacks = attacks
 
     @property
     def best_opponent_attack(self):
@@ -199,25 +115,109 @@ class ClanWarMember(object):
         self._best_opponent_attack = best_opponent_attack
 
     @property
-    def attacks(self):
-        """Gets the attacks of this ClanWarMember.  # noqa: E501
+    def map_position(self):
+        """Gets the map_position of this ClanWarMember.  # noqa: E501
 
 
-        :return: The attacks of this ClanWarMember.  # noqa: E501
-        :rtype: ClanWarAttackList
+        :return: The map_position of this ClanWarMember.  # noqa: E501
+        :rtype: int
         """
-        return self._attacks
+        return self._map_position
 
-    @attacks.setter
-    def attacks(self, attacks):
-        """Sets the attacks of this ClanWarMember.
+    @map_position.setter
+    def map_position(self, map_position):
+        """Sets the map_position of this ClanWarMember.
 
 
-        :param attacks: The attacks of this ClanWarMember.  # noqa: E501
-        :type: ClanWarAttackList
+        :param map_position: The map_position of this ClanWarMember.  # noqa: E501
+        :type: int
         """
 
-        self._attacks = attacks
+        self._map_position = map_position
+
+    @property
+    def name(self):
+        """Gets the name of this ClanWarMember.  # noqa: E501
+
+
+        :return: The name of this ClanWarMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ClanWarMember.
+
+
+        :param name: The name of this ClanWarMember.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def opponent_attacks(self):
+        """Gets the opponent_attacks of this ClanWarMember.  # noqa: E501
+
+
+        :return: The opponent_attacks of this ClanWarMember.  # noqa: E501
+        :rtype: int
+        """
+        return self._opponent_attacks
+
+    @opponent_attacks.setter
+    def opponent_attacks(self, opponent_attacks):
+        """Sets the opponent_attacks of this ClanWarMember.
+
+
+        :param opponent_attacks: The opponent_attacks of this ClanWarMember.  # noqa: E501
+        :type: int
+        """
+
+        self._opponent_attacks = opponent_attacks
+
+    @property
+    def tag(self):
+        """Gets the tag of this ClanWarMember.  # noqa: E501
+
+
+        :return: The tag of this ClanWarMember.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ClanWarMember.
+
+
+        :param tag: The tag of this ClanWarMember.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
+
+    @property
+    def townhall_level(self):
+        """Gets the townhall_level of this ClanWarMember.  # noqa: E501
+
+
+        :return: The townhall_level of this ClanWarMember.  # noqa: E501
+        :rtype: int
+        """
+        return self._townhall_level
+
+    @townhall_level.setter
+    def townhall_level(self, townhall_level):
+        """Sets the townhall_level of this ClanWarMember.
+
+
+        :param townhall_level: The townhall_level of this ClanWarMember.  # noqa: E501
+        :type: int
+        """
+
+        self._townhall_level = townhall_level
 
     def to_dict(self):
         """Returns the model properties as a dict"""
