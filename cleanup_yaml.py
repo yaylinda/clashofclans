@@ -1,6 +1,6 @@
 import yaml
 
-YAML_FILE_PATH = 'resources/clashofclans.yaml'
+YAML_FILE_PATH = 'clashofclans.yaml'
 
 
 def to_camel_case(name):
@@ -35,4 +35,7 @@ def enums_to_camel_case():
 
 
 if __name__ == '__main__':
+    """
+    Define various function here to "clean up" the yaml. Then run `make gen` to regenerate the client.
+    """
     enums_to_camel_case()
